@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Application</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        ul { list-style-type: none; }
+        li { margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <h1>To-Do List Application</h1>
+    <input type="text" id="taskInput" placeholder="Add a new task...">
+    <button id="addTaskButton">Add Task</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        document.getElementById('addTaskButton').onclick = function() {
+            var taskInput = document.getElementById('taskInput').value;
+            if (taskInput) {
+                var li = document.createElement('li');
+                li.appendChild(document.createTextNode(taskInput));
+                document.getElementById('taskList').appendChild(li);
+                document.getElementById('taskInput').value = '';
+            }
+        };
+    </script>
+</body>
+</html>
