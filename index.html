@@ -465,6 +465,41 @@ video.sec-video{width:100%;height:100%;object-fit:cover;display:block;border-rad
 .whynow-img,.solution-img,.why-img{position:relative;overflow:hidden;border-radius:var(--r);min-height:400px}
 .whynow-img video,.solution-img video,.why-img video{aspect-ratio:16/9}
 
+
+/* ===== LUXURY EDITORIAL LAYOUT — videos as cinematic banners ===== */
+
+/* WHY NOW: stack vertical, video on top, text below */
+.whynow-grid{display:flex!important;flex-direction:column!important;gap:64px!important;align-items:stretch!important}
+.whynow-grid > div:first-child{order:2}
+.whynow-img{order:1;width:100%!important;aspect-ratio:16/9!important;min-height:auto!important;max-height:none!important;border-radius:var(--r);overflow:hidden;margin:0!important;box-shadow:var(--shadow-lg)}
+.whynow-img video{width:100%!important;height:100%!important;object-fit:cover!important;display:block!important;aspect-ratio:auto!important}
+.whynow-list{max-width:780px;margin:0 auto}
+.whynow-ready{max-width:780px;margin-left:auto;margin-right:auto}
+.whynow-gap{max-width:780px;margin-left:auto;margin-right:auto;text-align:center}
+
+/* SOLUTION: same vertical, video on top, intro below, then 6 cards */
+.solution-top{display:flex!important;flex-direction:column!important;gap:48px!important;margin-bottom:64px!important}
+.solution-img{width:100%!important;aspect-ratio:16/9!important;min-height:auto!important;max-height:none!important;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-lg)}
+.solution-img video{width:100%!important;height:100%!important;object-fit:cover!important;display:block!important;aspect-ratio:auto!important}
+.solution-top > div:not(.solution-img){text-align:center;max-width:840px;margin:0 auto}
+.solution-intro{font-size:1.2rem!important;line-height:1.6!important;color:var(--text)!important}
+
+/* WHY US: vertical, video on top, 4 cards below in 2x2 grid */
+.why-grid{display:flex!important;flex-direction:column!important;gap:64px!important}
+.why-grid > .why-cards{order:2;display:grid!important;grid-template-columns:repeat(2,1fr)!important;gap:24px!important}
+.why-img{order:1;width:100%!important;aspect-ratio:16/9!important;min-height:auto!important;max-height:none!important;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-lg)}
+.why-img video{width:100%!important;height:100%!important;object-fit:cover!important;display:block!important;aspect-ratio:auto!important}
+
+/* HERO bg: ensure video covers full hero, no black bars */
+.hero{min-height:100vh}
+.hero-bg{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center 40%!important}
+
+/* Mobile responsive — videos still full width */
+@media (max-width:768px){
+  .why-grid > .why-cards{grid-template-columns:1fr!important}
+  .whynow-img,.solution-img,.why-img{aspect-ratio:16/10!important}
+}
+
 </style>
 </head>
 <body>
