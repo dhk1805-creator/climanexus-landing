@@ -1,0 +1,127 @@
+/* ClimaNexus i18n EN/VI Toggle */
+const i18n_dict = {
+"Why Now":"Tại sao Bây giờ","Problem":"Vấn đề","Solution":"Giải pháp","Technology":"Công nghệ","Demo":"Demo","Benefits":"Lợi ích","Roadmap":"Lộ trình","Start a Conversation":"Bắt đầu Trao đổi",
+"Intelligent Environmental Control":"Điều khiển Môi trường Thông minh","for the":"cho","Next Generation":"Thế hệ Mới","of Buildings":"của Công trình",
+"Transforming how residential environments are managed — from fragmented HVAC systems to a unified, intelligent IAQ/IEQ control platform.":"Chuyển đổi cách quản lý môi trường nhà ở — từ các hệ thống HVAC rời rạc thành nền tảng điều khiển IAQ/IEQ thống nhất, thông minh.",
+"Automatically balance air quality, thermal comfort, and energy efficiency":"Tự động cân bằng chất lượng không khí, tiện nghi nhiệt và hiệu quả năng lượng",
+"Built on deterministic control logic with AI-assisted optimization":"Xây dựng trên logic điều khiển xác định với tối ưu hóa hỗ trợ AI",
+"Designed for scalable deployment across residential ecosystems":"Thiết kế cho triển khai mở rộng trên các hệ sinh thái nhà ở",
+"Explore Technology →":"Khám phá Công nghệ →","🎯 Live Demo →":"🎯 Demo Trực tiếp →",
+"Energy Savings":"Tiết kiệm Năng lượng","Focus Increase":"Tăng Tập trung","Thermal Satisfaction":"Hài lòng Nhiệt độ","Edge Control":"Điều khiển Edge",
+"The world is shifting from \"installed systems\" to \"measured performance\"":"Thế giới đang chuyển từ \"hệ thống được lắp đặt\" sang \"hiệu năng được đo lường\"",
+"Energy efficiency is no longer optional — it is regulated, audited, and monetized":"Hiệu quả năng lượng không còn là tùy chọn — đã được quy định, kiểm toán và thương mại hóa",
+"Indoor air quality is becoming a health metric, not a comfort feature":"Chất lượng không khí trong nhà đang trở thành chỉ số sức khỏe, không chỉ tính năng tiện nghi",
+"ESG and Net Zero commitments require operational validation, not design intent":"Cam kết ESG và Net Zero đòi hỏi xác thực vận hành, không chỉ ý đồ thiết kế",
+"Residential buildings — the largest built environment segment — remain structurally under-optimized":"Nhà ở — phân khúc môi trường xây dựng lớn nhất — vẫn chưa được tối ưu về cấu trúc",
+"Sensors are affordable":"Cảm biến đã rẻ","Edge computing is reliable":"Edge computing đã đáng tin cậy","AI is actionable":"AI đã ứng dụng được",
+"Yet the market lacks a unified control layer. This is the gap ClimaNexus is built to solve.":"Tuy nhiên thị trường thiếu một lớp điều khiển thống nhất. Đây là khoảng trống ClimaNexus được xây dựng để giải quyết.",
+"The Problem":"Vấn đề","Homes are filled with devices, but lack intelligence":"Nhà ở đầy thiết bị, nhưng thiếu trí tuệ",
+"Independent Operation":"Vận hành Độc lập","HVAC systems, air purifiers, ERV/HRV units operate independently":"Các hệ thống HVAC, máy lọc khí, ERV/HRV vận hành độc lập",
+"Unreadable Data":"Dữ liệu Khó đọc","Data is available but not interpretable":"Dữ liệu có sẵn nhưng không thể diễn giải",
+"No Control Logic":"Thiếu Logic Điều khiển","Control logic is inconsistent or absent":"Logic điều khiển không nhất quán hoặc không tồn tại",
+"System Conflicts":"Xung đột Hệ thống","Systems often conflict with each other":"Các hệ thống thường xung đột với nhau",
+"Poor IAQ despite high investment":"IAQ kém dù đầu tư cao","Energy waste":"Lãng phí năng lượng","Unpredictable comfort":"Tiện nghi không dự đoán được","No measurable performance":"Không có hiệu năng đo lường được",
+"The problem is not hardware.":"Vấn đề không nằm ở phần cứng.","The problem is the absence of a coordinated control system.":"Vấn đề là sự thiếu vắng hệ thống điều khiển có phối hợp.",
+"Our Solution":"Giải pháp của chúng tôi","A deterministic, AI-assisted environmental control platform":"Nền tảng điều khiển môi trường xác định, hỗ trợ bởi AI",
+"ClimaNexus introduces a new layer:":"ClimaNexus giới thiệu một lớp mới:",
+"A control intelligence that sits above HVAC devices and orchestrates the environment.":"Trí tuệ điều khiển nằm trên các thiết bị HVAC và điều phối toàn bộ môi trường.",
+"IAQ-Driven Operation":"Vận hành Hướng IAQ","Ventilation and system behavior respond directly to CO₂, PM2.5, Temperature, and Humidity.":"Thông gió và hành vi hệ thống phản ứng trực tiếp với CO₂, PM2.5, Nhiệt độ và Độ ẩm.",
+"Deterministic Control Logic":"Logic Điều khiển Xác định",
+"Clearly defined states: NORMAL / IAQ_BOOST / HEAT_ASSIST / DEHUM / ALARM. Priority-based execution ensures stable operation.":"Các trạng thái xác định rõ: NORMAL / IAQ_BOOST / HEAT_ASSIST / DEHUM / ALARM. Thực thi theo ưu tiên đảm bảo vận hành ổn định.",
+"Safety-First Architecture":"Kiến trúc Ưu tiên An toàn",
+"Heating and dehumidification only activate when airflow is verified. Prevents unsafe or inefficient system states.":"Sưởi và hút ẩm chỉ kích hoạt khi luồng khí được xác minh. Ngăn ngừa trạng thái hệ thống không an toàn hoặc kém hiệu quả.",
+"AI-Assisted Optimization":"Tối ưu hóa Hỗ trợ bởi AI","AI improves performance parameters. But cannot override safety or core control logic.":"AI cải thiện thông số hiệu năng. Nhưng không thể ghi đè logic an toàn hoặc điều khiển cốt lõi.",
+"Edge-First Reliability":"Độ tin cậy Edge-First","System runs independently of cloud. Ensures stability and fail-safe operation.":"Hệ thống chạy độc lập với cloud. Đảm bảo ổn định và an toàn khi sự cố.",
+"Multi-System Integration":"Tích hợp Đa Hệ thống","Compatible with diverse HVAC configurations. Supports scalable deployment across projects.":"Tương thích với nhiều cấu hình HVAC khác nhau. Hỗ trợ triển khai mở rộng trên nhiều dự án.",
+"System Architecture":"Kiến trúc Hệ thống","Input":"Đầu vào","Sensors":"Cảm biến","Logic":"Logic","Edge Controller":"Bộ điều khiển Edge","Output":"Đầu ra","HVAC Systems":"Hệ thống HVAC","Optimization":"Tối ưu hóa","Cloud AI":"AI trên Cloud",
+"Sensors provide real-time environmental data. Edge controller executes deterministic logic. HVAC systems respond dynamically. Cloud AI continuously optimizes performance.":"Cảm biến cung cấp dữ liệu môi trường thời gian thực. Bộ điều khiển Edge thực thi logic xác định. Hệ thống HVAC phản ứng linh hoạt. AI trên Cloud liên tục tối ưu hiệu năng.",
+"Not a device":"Không phải thiết bị","Not a BMS":"Không phải BMS","Not an app":"Không phải ứng dụng","It is a control intelligence layer":"Đó là một lớp trí tuệ điều khiển",
+"Interactive Demo":"Demo Tương tác","Experience deterministic control in real-time":"Trải nghiệm điều khiển xác định trong thời gian thực",
+"A working visualization of how ClimaNexus orchestrates HVAC across multiple zones — built on the same logic that runs in production.":"Trực quan hóa cách ClimaNexus điều phối HVAC qua nhiều vùng — dựa trên cùng logic chạy trong production.",
+"Live multi-zone floor plan with simulated sensor data (CO₂, PM2.5, temperature, humidity)":"Floor plan đa vùng trực tiếp với dữ liệu cảm biến mô phỏng (CO₂, PM2.5, nhiệt độ, độ ẩm)",
+"Interactive state machine in action: NORMAL / IAQ_BOOST / HEAT_ASSIST / DEHUM / ALARM":"Máy trạng thái tương tác đang hoạt động: NORMAL / IAQ_BOOST / HEAT_ASSIST / DEHUM / ALARM",
+"Real-time charts showing how decisions flow from sensors → edge controller → HVAC output":"Biểu đồ thời gian thực cho thấy luồng quyết định từ cảm biến → bộ điều khiển edge → đầu ra HVAC",
+"See exactly how Permission Gate Safety prevents conflicting system states":"Xem chính xác cách Permission Gate Safety ngăn các trạng thái hệ thống xung đột",
+"▶ Launch Interactive Demo →":"▶ Mở Demo Tương tác →","Open in new tab →":"Mở trong tab mới →",
+"Multi-Dimensional Value":"Giá trị Đa Chiều","For People":"Cho Con người","Healthier indoor air":"Không khí trong nhà lành mạnh hơn","Better sleep and comfort":"Giấc ngủ và tiện nghi tốt hơn","Reduced cognitive load (no manual control)":"Giảm tải nhận thức (không cần điều khiển thủ công)",
+"For Buildings / Owners":"Cho Công trình / Chủ đầu tư","20–30% energy savings":"Tiết kiệm 20–30% năng lượng","Predictable performance":"Hiệu năng dự đoán được","Reduced operational inconsistency":"Giảm bất nhất trong vận hành",
+"For Society":"Cho Xã hội","Lower healthcare burden":"Giảm gánh nặng y tế","Improved productivity":"Năng suất cải thiện","Measurable ESG outcomes":"Kết quả ESG đo lường được",
+"For Environment":"Cho Môi trường","Reduced emissions":"Giảm phát thải","More efficient energy usage":"Sử dụng năng lượng hiệu quả hơn","Sustainable building operation":"Vận hành công trình bền vững",
+"Market Opportunity":"Cơ hội Thị trường","Residential = the largest, most underserved segment":"Nhà ở = phân khúc lớn nhất, ít được phục vụ nhất",
+"Billions m²":"Tỷ m²","Residential Space":"Không gian Nhà ở","IAQ Demand Growth":"Tăng trưởng Nhu cầu IAQ","Net Zero Deadline":"Hạn chót Net Zero",
+"No standardized IAQ/IEQ control platform exists. Existing solutions are either too complex (BMS) or too fragmented (consumer devices).":"Chưa có nền tảng điều khiển IAQ/IEQ chuẩn hóa. Các giải pháp hiện có hoặc quá phức tạp (BMS) hoặc quá rời rạc (thiết bị tiêu dùng).",
+"ClimaNexus positions itself as the default control layer for residential environmental intelligence.":"ClimaNexus định vị là lớp điều khiển mặc định cho trí tuệ môi trường nhà ở.",
+"Competitive Edge":"Lợi thế Cạnh tranh","Built at the intersection of engineering, control systems, and AI":"Xây dựng tại giao điểm của kỹ thuật, hệ thống điều khiển và AI",
+"Deep Domain Expertise":"Chuyên môn Sâu Lĩnh vực","HVAC engineering + control logic with decades of field experience":"Kỹ thuật HVAC + logic điều khiển với hàng chục năm kinh nghiệm thực địa",
+"System-Level Thinking":"Tư duy Cấp Hệ thống","Not product-level — we design for the whole environment":"Không phải cấp sản phẩm — chúng tôi thiết kế cho toàn bộ môi trường",
+"Scalable Architecture":"Kiến trúc Mở rộng","Project → Portfolio → Region":"Dự án → Danh mục → Khu vực","Clear Market Focus":"Trọng tâm Thị trường Rõ ràng","Underserved residential segment with massive potential":"Phân khúc nhà ở chưa được phục vụ với tiềm năng khổng lồ",
+"Leadership & Execution":"Lãnh đạo & Thực thi","A cross-functional team combining engineering, technology, and market execution":"Đội ngũ liên ngành kết hợp kỹ thuật, công nghệ và thực thi thị trường",
+"President & IP Owner":"Chủ tịch & Sở hữu IP","35 years in HVAC engineering. Patent inventor of ClimaNexus state-based control with AI optimization.":"35 năm kỹ thuật HVAC. Tác giả sáng chế hệ thống điều khiển state-based với tối ưu AI của ClimaNexus.",
+"International business leader. Drives global strategy, partnerships, and investor relations.":"Lãnh đạo kinh doanh quốc tế. Dẫn dắt chiến lược toàn cầu, đối tác và quan hệ nhà đầu tư.",
+"10 years automotive embedded — Engineering Lead at LG (Telematics), now PMO for Honda program at FPT. PMP, PSM.":"10 năm embedded automotive — Engineering Lead tại LG (Telematics), hiện là PMO cho chương trình Honda tại FPT. PMP, PSM.",
+"Products & Operations":"Sản phẩm & Vận hành","25 years in HVAC design & construction. Product engineering, quality assurance, field deployment.":"25 năm thiết kế & thi công HVAC. Kỹ thuật sản phẩm, đảm bảo chất lượng, triển khai thực địa.",
+"Supply Chain Manager":"Quản lý Chuỗi Cung ứng","NYC University graduate. Supply chain specialist — procurement, logistics, vendor coordination.":"Tốt nghiệp NYC University. Chuyên gia chuỗi cung ứng — mua hàng, logistics, điều phối nhà cung cấp.",
+"Commercial Director":"Giám đốc Thương mại","Dean of Industrial University of HCMC. B2B strategy with developers and institutional market expansion.":"Trưởng khoa Đại học Công nghiệp TP.HCM. Chiến lược B2B với chủ đầu tư và mở rộng thị trường tổ chức.",
+"Manufacturing Partner":"Đối tác Sản xuất","25 years manufacturing HVAC — VAV, fire dampers, ducts, ERV/AHU. Strategic hardware backbone.":"25 năm sản xuất HVAC — VAV, van chống cháy, ống dẫn, ERV/AHU. Trụ cột phần cứng chiến lược.",
+"This is not a concept team. This is an execution team.":"Đây không phải đội ngũ ý tưởng. Đây là đội ngũ thực thi.",
+"Investment Roadmap":"Lộ trình Đầu tư","A phased strategy to scale ClimaNexus into a regional platform":"Chiến lược theo giai đoạn để đưa ClimaNexus thành nền tảng khu vực",
+"Phase 1":"Giai đoạn 1","Validation":"Xác thực","Pilot deployments":"Triển khai thí điểm","System refinement":"Tinh chỉnh hệ thống","Core technology validation":"Xác thực công nghệ cốt lõi",
+"Phase 2":"Giai đoạn 2","Productization":"Sản phẩm hóa","Standardized platform":"Nền tảng chuẩn hóa","Integration framework":"Khung tích hợp","Initial market entry":"Thâm nhập thị trường ban đầu",
+"Phase 3":"Giai đoạn 3","Expansion":"Mở rộng","Scaling across Southeast Asia":"Mở rộng khắp Đông Nam Á","Partnerships with developers and contractors":"Hợp tác với chủ đầu tư và nhà thầu",
+"Phase 4":"Giai đoạn 4","Platform Scale":"Mở rộng Nền tảng","Ecosystem integration":"Tích hợp hệ sinh thái","Data-driven services":"Dịch vụ dựa trên dữ liệu","Regional dominance":"Vị thế thống lĩnh khu vực",
+"Funding Strategy":"Chiến lược Tài trợ","Capital deployment across key verticals":"Triển khai vốn trên các ngành dọc trọng yếu",
+"Product Development":"Phát triển Sản phẩm","System optimization & firmware":"Tối ưu hệ thống & firmware","Certification":"Chứng nhận","Standardization & compliance":"Chuẩn hóa & tuân thủ",
+"Market Expansion":"Mở rộng Thị trường","APAC focus & regional growth":"Tập trung APAC & tăng trưởng khu vực","Strategic Partnerships":"Đối tác Chiến lược","Developers & contractors":"Chủ đầu tư & nhà thầu",
+"Build ClimaNexus into the de-facto IAQ/IEQ control platform for residential buildings.":"Xây dựng ClimaNexus thành nền tảng điều khiển IAQ/IEQ tiêu chuẩn cho nhà ở.",
+"Let's Connect":"Kết nối","Let's define the future of indoor environments together":"Cùng định nghĩa tương lai môi trường trong nhà",
+"We are actively engaging with:":"Chúng tôi đang chủ động làm việc với:",
+"Strategic Investors":"Nhà đầu tư Chiến lược","Real Estate Developers":"Chủ đầu tư Bất động sản","HVAC Partners":"Đối tác HVAC","Technology Collaborators":"Đối tác Công nghệ",
+"Discuss Partnership":"Thảo luận Đối tác","Request Demo":"Yêu cầu Demo","Explore Investment":"Tìm hiểu Đầu tư",
+"© 2024–2026 ClimaNexus Inc. All rights reserved. Patent IPC F24F 11/00 · IP Owner: Dao Huy Khanh / ClimaNexus Inc.":"© 2024–2026 ClimaNexus Inc. Bảo lưu mọi quyền. Sáng chế IPC F24F 11/00 · Chủ sở hữu IP: Đào Huy Khánh / ClimaNexus Inc.",
+"ClimaNexus — Intelligent IAQ & IEQ Control Platform":"ClimaNexus — Nền tảng Điều khiển IAQ & IEQ Thông minh",
+"ClimaNexus — Intelligent IAQ/IEQ control platform. AI-powered HVAC automation with deterministic safety and 30% energy savings.":"ClimaNexus — Nền tảng điều khiển IAQ/IEQ thông minh. Tự động hóa HVAC với AI, an toàn xác định và tiết kiệm 30% năng lượng."
+};
+
+const i18n_orig = new WeakMap();
+let i18n_snap = false;
+function i18n_walk(cb){
+  const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+    acceptNode: n => {
+      if (!n.parentElement) return NodeFilter.FILTER_REJECT;
+      const t = n.parentElement.tagName;
+      if (t === 'SCRIPT' || t === 'STYLE') return NodeFilter.FILTER_REJECT;
+      if (n.parentElement.closest('.lang-toggle')) return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+  let n; while(n = w.nextNode()) cb(n);
+}
+function i18n_apply(lang){
+  if (!i18n_snap) { i18n_walk(n => i18n_orig.set(n, n.textContent)); i18n_snap = true; }
+  i18n_walk(n => {
+    const orig = i18n_orig.get(n); if (!orig) return;
+    if (lang === 'en') { n.textContent = orig; return; }
+    const t = orig.trim(); if (i18n_dict[t]) n.textContent = orig.replace(t, i18n_dict[t]);
+  });
+  document.documentElement.lang = lang;
+  const tk = "ClimaNexus — Intelligent IAQ & IEQ Control Platform";
+  const dk = "ClimaNexus — Intelligent IAQ/IEQ control platform. AI-powered HVAC automation with deterministic safety and 30% energy savings.";
+  document.title = (lang === 'vi' && i18n_dict[tk]) ? i18n_dict[tk] : tk;
+  const md = document.querySelector('meta[name="description"]');
+  if (md) md.content = (lang === 'vi' && i18n_dict[dk]) ? i18n_dict[dk] : dk;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  const u = new URL(window.location);
+  if (lang === 'en') u.searchParams.delete('lang'); else u.searchParams.set('lang', lang);
+  history.replaceState(null, '', u);
+}
+(function initI18n(){
+  const nav = document.getElementById('navLinks'); if (!nav) return;
+  const cta = nav.querySelector('.nav-cta');
+  const tg = document.createElement('div'); tg.className = 'lang-toggle';
+  tg.innerHTML = '<button class="lang-btn active" data-lang="en">EN</button><span class="lang-sep">|</span><button class="lang-btn" data-lang="vi">VI</button>';
+  tg.querySelectorAll('.lang-btn').forEach(b => b.addEventListener('click', () => i18n_apply(b.dataset.lang)));
+  if (cta) nav.insertBefore(tg, cta); else nav.appendChild(tg);
+  i18n_walk(n => i18n_orig.set(n, n.textContent)); i18n_snap = true;
+  const p = new URLSearchParams(window.location.search);
+  if (p.get('lang') === 'vi') i18n_apply('vi');
+})();
