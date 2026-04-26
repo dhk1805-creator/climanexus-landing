@@ -12,7 +12,7 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
 /* Refined dark — luxury premium palette */
---bg:#0E1117;--bg-elevated:#161B26;--surface:#161B26;--surface-card:#1C2230;--surface-alt:#232938;
+--bg:#000000;--bg-elevated:#000000;--surface:#0A0A0A;--surface-card:#0F0F12;--surface-alt:#141418;
 --primary:#C9A96E;--primary-mid:#B89455;--primary-light:#E0C994;
 --accent:#4CB848;--accent-dark:#3A9A36;--gold:#C9A96E;--warm:#C8965A;--danger:#A8504A;
 --steel:#5A7A9E;
@@ -470,7 +470,7 @@ footer{background:var(--bg)!important;border-top:1px solid var(--border)!importa
 .hero-bg{will-change:transform;transition:transform 0.05s linear}
 
 /* 6. Loading curtain reveal */
-#loading-curtain{position:fixed;top:0;left:0;width:100%;height:100%;background:#0E1117;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:transform 0.9s cubic-bezier(0.76,0,0.24,1),opacity 0.4s ease 0.5s}
+#loading-curtain{position:fixed;top:0;left:0;width:100%;height:100%;background:#000000;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:transform 0.9s cubic-bezier(0.76,0,0.24,1),opacity 0.4s ease 0.5s}
 #loading-curtain.gone{transform:translateY(-101%);opacity:0;pointer-events:none}
 #loading-curtain .curtain-brand{font-family:'Cormorant Garamond',serif;color:var(--primary);font-size:clamp(2rem,5vw,3.5rem);font-weight:500;letter-spacing:3px;text-transform:uppercase;animation:curtainFade 0.8s cubic-bezier(0.16,1,0.3,1)}
 #loading-curtain .curtain-tag{font-family:'Plus Jakarta Sans',sans-serif;color:var(--text-sec);font-size:0.7rem;letter-spacing:4px;text-transform:uppercase;margin-top:14px;animation:curtainFade 0.8s cubic-bezier(0.16,1,0.3,1) 0.2s both}
@@ -528,7 +528,7 @@ video.sec-video{width:100%;height:100%;object-fit:cover;display:block;border-rad
 
 
 /* ===== DEMO recording video frame ===== */
-.demo-video-frame{position:relative;width:100%;aspect-ratio:5/4;background:#0E1117;border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.6),inset 0 0 0 1px rgba(201,169,110,0.15)}
+.demo-video-frame{position:relative;width:100%;aspect-ratio:5/4;background:#000000;border-radius:14px;overflow:hidden}
 .demo-video-frame video.demo-recording{width:100%;height:100%;object-fit:cover;display:block}
 /* Demo: video on top (large), text below */
 .demo-content{display:flex!important;flex-direction:column!important;gap:56px!important;align-items:stretch!important}
@@ -542,18 +542,18 @@ video.sec-video{width:100%;height:100%;object-fit:cover;display:block;border-rad
 
 
 /* Tech section video — native aspect ratio for system architecture animation */
-.tech-video-wrap{position:relative!important;width:100%!important;max-width:720px!important;margin:0 auto 32px!important;aspect-ratio:1280/1290!important;padding-bottom:0!important;height:auto!important;border-radius:var(--r);overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.6),inset 0 0 0 1px rgba(201,169,110,0.15);background:#0E1117}
+.tech-video-wrap{position:relative!important;width:100%!important;max-width:720px!important;margin:0 auto 32px!important;aspect-ratio:1280/1290!important;padding-bottom:0!important;height:auto!important;border-radius:var(--r);overflow:hidden;background:#000000}
 .tech-video-wrap video.tech-video{width:100%!important;height:100%!important;object-fit:cover!important;display:block!important;position:relative!important;aspect-ratio:auto!important}
 
 
 /* Solution video native aspect ratio (cropped to remove watermark) */
 .solution-img{aspect-ratio:1280/1268!important;max-width:720px!important;margin:0 auto!important}
-.solution-img video{object-fit:contain!important;background:#0E1117}
+.solution-img video{object-fit:contain!important;background:#000000}
 
 
 /* WHY NOW video cinematic banner (cropped to remove watermark, full width) */
 .whynow-img{aspect-ratio:1280/660!important;max-width:none!important;width:100%!important;margin:0!important}
-.whynow-img video{object-fit:cover!important;background:#0E1117}
+.whynow-img video{object-fit:cover!important;background:#000000}
 
 
 /* Hero stats: centered at bottom, bigger numbers */
@@ -892,230 +892,4 @@ video.sec-video{width:100%;height:100%;object-fit:cover;display:block;border-rad
 // Scroll nav
 window.addEventListener('scroll',()=>{document.querySelector('nav').classList.toggle('scrolled',window.scrollY>50)});
 // Intersection Observer for fade-up
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.15});
-document.querySelectorAll(".fade-up").forEach(el=>obs.observe(el));
-</script>
-<script src="/i18n.js"></script>
-<script src="/demo-anim.js"></script>
-
-<script>
-/* ===== LUXURY EFFECTS JS ===== */
-
-/* 1. Scroll progress bar */
-const progressBar = document.getElementById('scroll-progress');
-window.addEventListener('scroll', () => {
-  const h = document.documentElement;
-  const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
-  if (progressBar) progressBar.style.width = pct + '%';
-});
-
-/* 2. Animated stats counter */
-const animateStats = () => {
-  document.querySelectorAll('.hero-stat .val').forEach(el => {
-    if (el.dataset.animated) return;
-    const target = el.textContent.trim();
-    const numMatch = target.match(/^(>?)(\d+)(.*)$/);
-    if (!numMatch) return;
-    const [_, prefix, numStr, suffix] = numMatch;
-    const num = parseInt(numStr);
-    if (isNaN(num)) return;
-    el.dataset.animated = '1';
-    let current = 0;
-    const duration = 1400;
-    const start = performance.now();
-    const tick = (now) => {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
-      // ease-out cubic
-      const eased = 1 - Math.pow(1 - progress, 3);
-      current = Math.floor(num * eased);
-      el.textContent = prefix + current + suffix;
-      if (progress < 1) requestAnimationFrame(tick);
-      else el.textContent = target;
-    };
-    requestAnimationFrame(tick);
-  });
-};
-const heroStatsObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) animateStats(); });
-}, {threshold: 0.4});
-const heroStatsEl = document.querySelector('.hero-stats');
-if (heroStatsEl) heroStatsObs.observe(heroStatsEl);
-
-/* 4. Magnetic hover on primary buttons */
-document.querySelectorAll('.btn-p, .btn-launch, .nav-cta').forEach(btn => {
-  btn.addEventListener('mousemove', (e) => {
-    const rect = btn.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-    btn.style.transform = `translate(${x * 0.18}px, ${y * 0.18}px)`;
-  });
-  btn.addEventListener('mouseleave', () => {
-    btn.style.transform = 'translate(0, 0)';
-  });
-});
-
-/* 5. Hero parallax */
-const heroBg = document.querySelector('.hero-bg');
-if (heroBg) {
-  window.addEventListener('scroll', () => {
-    const offset = window.scrollY * 0.35;
-    if (window.scrollY < window.innerHeight) {
-      heroBg.style.transform = `translateY(${offset}px) scale(1.05)`;
-    }
-  });
-}
-
-/* 6. Loading curtain dismiss */
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    const curtain = document.getElementById('loading-curtain');
-    if (curtain) {
-      curtain.classList.add('gone');
-      setTimeout(() => curtain.remove(), 1000);
-    }
-  }, 800);
-});
-</script>
-
-
-<script>
-/* Ambient music toggle — gentle fade in/out, persists state via localStorage.
-   Default: OFF. Click toggle → fades in. Refresh: remembers last state.
-   Auto-attempt play on load only if user previously enabled it. */
-(function(){
-  var audio = document.getElementById('ambient-audio');
-  var btn   = document.getElementById('music-toggle');
-  if (!audio || !btn) return;
-
-  var KEY = 'cnx-ambient-music';
-  var TARGET_VOLUME = 0.28;   // gentle, non-intrusive
-  var FADE_MS = 1400;
-  audio.volume = 0;
-
-  function fadeTo(target, done){
-    var start = audio.volume;
-    var t0 = performance.now();
-    function step(now){
-      var k = Math.min(1, (now - t0) / FADE_MS);
-      audio.volume = start + (target - start) * k;
-      if (k < 1) requestAnimationFrame(step);
-      else if (done) done();
-    }
-    requestAnimationFrame(step);
-  }
-
-  function play(){
-    audio.preload = 'auto';
-    var p = audio.play();
-    if (p && typeof p.catch === 'function'){
-      p.then(function(){
-        btn.classList.add('playing');
-        fadeTo(TARGET_VOLUME);
-        try{ localStorage.setItem(KEY, 'on'); }catch(e){}
-      }).catch(function(){
-        // browser blocked — wait for user interaction
-        btn.classList.remove('playing');
-      });
-    }
-  }
-  function pause(){
-    fadeTo(0, function(){ audio.pause(); });
-    btn.classList.remove('playing');
-    try{ localStorage.setItem(KEY, 'off'); }catch(e){}
-  }
-
-  btn.addEventListener('click', function(){
-    if (audio.paused) play(); else pause();
-  });
-
-  // Restore previous state
-  var prev = null;
-  try{ prev = localStorage.getItem(KEY); }catch(e){}
-  if (prev === 'on'){
-    // Try autoplay; if browser blocks, will play on first user interaction
-    setTimeout(play, 600);
-    var resume = function(){
-      if (audio.paused) play();
-      document.removeEventListener('click', resume);
-      document.removeEventListener('touchstart', resume);
-    };
-    document.addEventListener('click', resume, { once: true });
-    document.addEventListener('touchstart', resume, { once: true, passive: true });
-  }
-})();
-</script>
-
-<script>
-/* Mobile-friendly video playback:
-   - Force muted+playsinline+autoplay attributes (some browsers strip)
-   - Explicitly call play() on visible (IntersectionObserver) for iOS Safari
-   - 0.8x playback rate = 24fps cinematic film rate (smooth, not jittery)
-   - Fallback: play on first user touch anywhere on page
-*/
-(function(){
-  function setupVideo(v){
-    // Ensure mobile autoplay attributes
-    v.muted = true;
-    v.defaultMuted = true;
-    v.playsInline = true;
-    v.setAttribute('muted','');
-    v.setAttribute('playsinline','');
-    v.setAttribute('webkit-playsinline','');
-    v.setAttribute('autoplay','');
-
-    var setRate = function(){ try{ v.playbackRate = 0.8; }catch(e){} };
-    setRate();
-    v.addEventListener('loadedmetadata', setRate);
-    v.addEventListener('play', setRate);
-
-    var tryPlay = function(){
-      var p = v.play();
-      if (p && typeof p.catch === 'function') p.catch(function(){});
-    };
-    tryPlay();
-    v.addEventListener('canplay', tryPlay);
-    v.addEventListener('loadeddata', tryPlay);
-  }
-
-  function init(){
-    var vids = document.querySelectorAll('video');
-    vids.forEach(setupVideo);
-
-    // IntersectionObserver — play when visible (battery-friendly + iOS Safari friendly)
-    if ('IntersectionObserver' in window){
-      var io = new IntersectionObserver(function(entries){
-        entries.forEach(function(e){
-          var v = e.target;
-          if (e.isIntersecting){
-            var p = v.play();
-            if (p && typeof p.catch === 'function') p.catch(function(){});
-          }
-        });
-      }, { threshold: 0.1 });
-      vids.forEach(function(v){ io.observe(v); });
-    }
-
-    // Fallback: any user touch/click anywhere triggers all videos to play
-    var unlock = function(){
-      vids.forEach(function(v){
-        var p = v.play();
-        if (p && typeof p.catch === 'function') p.catch(function(){});
-      });
-      document.removeEventListener('touchstart', unlock);
-      document.removeEventListener('click', unlock);
-    };
-    document.addEventListener('touchstart', unlock, { passive: true, once: true });
-    document.addEventListener('click', unlock, { once: true });
-  }
-
-  if (document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-})();
-</script>
-
-</body>
-</html>
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classL
