@@ -430,9 +430,39 @@ footer{background:var(--bg)!important;border-top:1px solid var(--border)!importa
 /* 2g. Italic accent for emphasis on hero */
 .hero h1 em{font-family:'Cormorant Garamond',serif!important;font-style:italic!important;font-weight:500!important;color:var(--primary)!important}
 
+
+/* ===== TIER 1 LUXURY EFFECTS ===== */
+
+/* 1. Gold scroll progress bar */
+#scroll-progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,#C9A96E 0%,#E0C994 50%,#C9A96E 100%);z-index:9999;width:0%;transition:width 0.1s ease;box-shadow:0 0 8px rgba(201,169,110,0.5)}
+
+/* 3. Section gold dividers (between sections) */
+.sec + .sec::before,.sec + .demo-sec::before,.demo-sec + .sec::before,.cta-sec::before{content:'';display:block;position:absolute;top:0;left:50%;transform:translateX(-50%);width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--primary),transparent);opacity:0.5}
+.sec,.demo-sec,.cta-sec{position:relative}
+
+/* 5. Hero parallax — smooth bg shift */
+.hero-bg{will-change:transform;transition:transform 0.05s linear}
+
+/* 6. Loading curtain reveal */
+#loading-curtain{position:fixed;top:0;left:0;width:100%;height:100%;background:#0E1117;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:transform 0.9s cubic-bezier(0.76,0,0.24,1),opacity 0.4s ease 0.5s}
+#loading-curtain.gone{transform:translateY(-101%);opacity:0;pointer-events:none}
+#loading-curtain .curtain-brand{font-family:'Cormorant Garamond',serif;color:var(--primary);font-size:clamp(2rem,5vw,3.5rem);font-weight:500;letter-spacing:3px;text-transform:uppercase;animation:curtainFade 0.8s cubic-bezier(0.16,1,0.3,1)}
+#loading-curtain .curtain-tag{font-family:'Plus Jakarta Sans',sans-serif;color:var(--text-sec);font-size:0.7rem;letter-spacing:4px;text-transform:uppercase;margin-top:14px;animation:curtainFade 0.8s cubic-bezier(0.16,1,0.3,1) 0.2s both}
+@keyframes curtainFade{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
+
+/* 7. Image hover gold tint */
+.whynow-img,.solution-img,.why-img,.benefit-card-img,.market-banner,.problem-banner{position:relative;overflow:hidden}
+.whynow-img::after,.solution-img::after,.why-img::after,.benefit-card-img::after,.market-banner::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,169,110,0) 0%,rgba(201,169,110,0.15) 100%);opacity:0;transition:opacity 0.6s cubic-bezier(0.16,1,0.3,1);pointer-events:none}
+.whynow-img:hover::after,.solution-img:hover::after,.why-img:hover::after,.benefit-card:hover .benefit-card-img::after,.market-banner:hover::after{opacity:1}
+
+/* 4. Magnetic hover prep — smooth transforms */
+.btn-p,.btn-launch,.nav-cta{will-change:transform}
+
 </style>
 </head>
 <body>
+<div id="scroll-progress"></div>
+<div id="loading-curtain"><div class="curtain-brand">ClimaNexus</div><div class="curtain-tag">Intelligent Environmental Control</div></div>
 
 <!-- NAV -->
 <nav>
@@ -762,5 +792,86 @@ document.querySelectorAll(".fade-up").forEach(el=>obs.observe(el));
 </script>
 <script src="/i18n.js"></script>
 <script src="/demo-anim.js"></script>
+
+<script>
+/* ===== LUXURY EFFECTS JS ===== */
+
+/* 1. Scroll progress bar */
+const progressBar = document.getElementById('scroll-progress');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  if (progressBar) progressBar.style.width = pct + '%';
+});
+
+/* 2. Animated stats counter */
+const animateStats = () => {
+  document.querySelectorAll('.hero-stat .val').forEach(el => {
+    if (el.dataset.animated) return;
+    const target = el.textContent.trim();
+    const numMatch = target.match(/^(>?)(\d+)(.*)$/);
+    if (!numMatch) return;
+    const [_, prefix, numStr, suffix] = numMatch;
+    const num = parseInt(numStr);
+    if (isNaN(num)) return;
+    el.dataset.animated = '1';
+    let current = 0;
+    const duration = 1400;
+    const start = performance.now();
+    const tick = (now) => {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      current = Math.floor(num * eased);
+      el.textContent = prefix + current + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+      else el.textContent = target;
+    };
+    requestAnimationFrame(tick);
+  });
+};
+const heroStatsObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) animateStats(); });
+}, {threshold: 0.4});
+const heroStatsEl = document.querySelector('.hero-stats');
+if (heroStatsEl) heroStatsObs.observe(heroStatsEl);
+
+/* 4. Magnetic hover on primary buttons */
+document.querySelectorAll('.btn-p, .btn-launch, .nav-cta').forEach(btn => {
+  btn.addEventListener('mousemove', (e) => {
+    const rect = btn.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    btn.style.transform = `translate(${x * 0.18}px, ${y * 0.18}px)`;
+  });
+  btn.addEventListener('mouseleave', () => {
+    btn.style.transform = 'translate(0, 0)';
+  });
+});
+
+/* 5. Hero parallax */
+const heroBg = document.querySelector('.hero-bg');
+if (heroBg) {
+  window.addEventListener('scroll', () => {
+    const offset = window.scrollY * 0.35;
+    if (window.scrollY < window.innerHeight) {
+      heroBg.style.transform = `translateY(${offset}px) scale(1.05)`;
+    }
+  });
+}
+
+/* 6. Loading curtain dismiss */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const curtain = document.getElementById('loading-curtain');
+    if (curtain) {
+      curtain.classList.add('gone');
+      setTimeout(() => curtain.remove(), 1000);
+    }
+  }, 800);
+});
+</script>
+
 </body>
 </html>
