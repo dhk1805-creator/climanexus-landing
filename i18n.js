@@ -1,7 +1,7 @@
 /* ClimaNexus i18n EN/VI Toggle - sentence case for VI */
 const i18n_dict = {
 "Why Now":"Tại sao bây giờ","Problem":"Vấn đề","Solution":"Giải pháp","Technology":"Công nghệ","Demo":"Demo","Benefits":"Lợi ích","Roadmap":"Lộ trình","Start a Conversation":"Bắt đầu trao đổi",
-"Intelligent Environmental Control":"Điều khiển môi trường thông minh","for the":"cho các công trình","Next Generation":"thế hệ mới","of Buildings":"",
+"Intelligent Environmental Control":"Điều khiển môi trường thông minh","for the":" cho các công trình","Next Generation":"thế hệ mới","of Buildings":"",
 "Transforming how residential environments are managed — from fragmented HVAC systems to a unified, intelligent IAQ/IEQ control platform.":"Chuyển đổi cách quản lý môi trường nhà ở — từ các hệ thống HVAC rời rạc thành nền tảng điều khiển IAQ/IEQ thống nhất, thông minh.",
 "Automatically balance air quality, thermal comfort, and energy efficiency":"Tự động cân bằng chất lượng không khí, tiện nghi nhiệt và hiệu quả năng lượng",
 "Built on deterministic control logic with AI-assisted optimization":"Xây dựng trên logic điều khiển xác định với tối ưu hóa hỗ trợ bởi AI",
