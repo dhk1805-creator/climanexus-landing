@@ -602,6 +602,14 @@ video.sec-video{width:100%;height:100%;object-fit:cover;display:block;border-rad
   .hero-stat{flex:0 0 calc(50% - 12px)}
 }
 
+
+
+/* Hero CF Stream video — fills hero behind overlays + text, image stays as instant fallback */
+.hero-bg-video{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;border:none!important;z-index:0!important;pointer-events:none!important;background:transparent}
+@media (max-width:768px){
+  /* On mobile, hide video to save bandwidth — image fallback shows instead */
+  .hero-bg-video{display:none}
+}
 </style>
 </head>
 <body>
@@ -633,6 +641,7 @@ video.sec-video{width:100%;height:100%;object-fit:cover;display:block;border-rad
 <!-- 1. HERO -->
 <section class="hero" id="hero">
 <img src="/images/hero-penthouse.jpg" alt="Luxury penthouse with panoramic city view at golden hour" class="hero-bg">
+<iframe class="hero-bg-video" src="https://customer-iiya2h68v5nrm40u.cloudflarestream.com/22d782f515f5194724eb73e91242bdf2/iframe?autoplay=true&muted=true&loop=true&controls=false&preload=auto&letterboxColor=transparent" allow="accelerometer; gyroscope; autoplay; encrypted-media" allowfullscreen="false" loading="eager" tabindex="-1" aria-hidden="true"></iframe>
 <div class="container">
 <div class="hero-inner">
 <h1>Intelligent Environmental Control<br>for the <em>Next Generation</em> of Buildings</h1>
