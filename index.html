@@ -892,4 +892,4 @@ video.sec-video{width:100%;height:100%;object-fit:cover;display:block;border-rad
 // Scroll nav
 window.addEventListener('scroll',()=>{document.querySelector('nav').classList.toggle('scrolled',window.scrollY>50)});
 // Intersection Observer for fade-up
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classL
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.15});
