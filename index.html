@@ -492,6 +492,12 @@ footer{background:var(--bg)!important;border-top:1px solid var(--border)!importa
 #music-toggle.playing .ic-on{display:block;animation:musicPulse 2.4s ease-in-out infinite}
 #music-toggle.playing{border-color:rgba(201,169,110,0.55);background:rgba(20,25,35,0.85);box-shadow:0 0 0 0 rgba(201,169,110,0),0 8px 24px rgba(0,0,0,0.4)}
 @keyframes musicPulse{0%,100%{opacity:0.7}50%{opacity:1}}
+/* Attention pulse for first 6s when audio blocked */
+#music-toggle.pulse-attention{animation:attentionPulse 1.6s ease-out infinite}
+@keyframes attentionPulse{
+  0%{box-shadow:0 8px 24px rgba(0,0,0,0.4),0 0 0 0 rgba(201,169,110,0.6)}
+  100%{box-shadow:0 8px 24px rgba(0,0,0,0.4),0 0 0 18px rgba(201,169,110,0)}
+}
 @media(max-width:600px){
   #music-toggle{bottom:16px;right:16px;padding:9px 12px}
   #music-toggle .mt-label{display:none}
@@ -1110,17 +1116,21 @@ window.addEventListener('load', () => {
   setTimeout(play, 200);
 
   // Fallback: any user interaction unlocks audio (one-shot, removes self)
+  // REAL user-activation gestures unlock audio (scroll does NOT count per W3C)
+  var EVENTS = ['click','pointerdown','mousedown','touchstart','touchend','keydown'];
   function unlock(){
     if (audio.paused) play();
-    document.removeEventListener('click', unlock);
-    document.removeEventListener('touchstart', unlock);
-    document.removeEventListener('scroll', unlock);
-    document.removeEventListener('keydown', unlock);
+    EVENTS.forEach(function(ev){ document.removeEventListener(ev, unlock, true); });
   }
-  document.addEventListener('click', unlock, { once: true });
-  document.addEventListener('touchstart', unlock, { once: true, passive: true });
-  document.addEventListener('scroll', unlock, { once: true, passive: true });
-  document.addEventListener('keydown', unlock, { once: true });
+  EVENTS.forEach(function(ev){
+    document.addEventListener(ev, unlock, { once: true, passive: true, capture: true });
+  });
+
+  // Pulse AMBIENT button for first 6s to hint user
+  if (btn){
+    btn.classList.add('pulse-attention');
+    setTimeout(function(){ btn.classList.remove('pulse-attention'); }, 6000);
+  }
 
 })();
 </script>
