@@ -251,7 +251,7 @@ footer{background:var(--primary);padding:40px 0;color:rgba(255,255,255,.6)}
 
 /* YouTube video embed (replaces tech-img static) */
 .tech-video-wrap{position:relative;padding-bottom:56.25%;height:0;border-radius:var(--r);overflow:hidden;margin-bottom:32px;box-shadow:0 4px 24px rgba(201,169,110,0.15)}
-.tech-video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+/* iframe removed - now using video element */
 
 /* DEMO SECTION */
 .demo-sec{background:linear-gradient(180deg,#0A0E1A 0%,#12182A 100%);padding:100px 0;color:#E8E6DF;position:relative;overflow:hidden}
@@ -460,7 +460,7 @@ footer{background:var(--bg)!important;border-top:1px solid var(--border)!importa
 
 
 /* ===== Cinematic videos (0.65x playback) ===== */
-video.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%}
+/* hero now image, see .hero-bg below */
 video.sec-video{width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit}
 .whynow-img,.solution-img,.why-img{position:relative;overflow:hidden;border-radius:var(--r);min-height:400px}
 .whynow-img video,.solution-img video,.why-img video{aspect-ratio:16/9}
@@ -500,6 +500,31 @@ video.sec-video{width:100%;height:100%;object-fit:cover;display:block;border-rad
   .whynow-img,.solution-img,.why-img{aspect-ratio:16/10!important}
 }
 
+
+/* ===== DEMO recording video frame ===== */
+.demo-video-frame{position:relative;width:100%;aspect-ratio:5/4;background:#0E1117;border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.6),inset 0 0 0 1px rgba(201,169,110,0.15)}
+.demo-video-frame video.demo-recording{width:100%;height:100%;object-fit:cover;display:block}
+.demo-content{display:grid!important;grid-template-columns:1fr 1.4fr!important;gap:48px!important;align-items:center!important}
+@media (max-width:900px){
+  .demo-content{grid-template-columns:1fr!important}
+  .demo-video-frame{aspect-ratio:16/10}
+}
+
+
+/* Tech section video — native aspect ratio for system architecture animation */
+.tech-video-wrap{position:relative!important;width:100%!important;max-width:720px!important;margin:0 auto 32px!important;aspect-ratio:1280/1360!important;padding-bottom:0!important;height:auto!important;border-radius:var(--r);overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.6),inset 0 0 0 1px rgba(201,169,110,0.15);background:#0E1117}
+.tech-video-wrap video.tech-video{width:100%!important;height:100%!important;object-fit:cover!important;display:block!important;position:relative!important;aspect-ratio:auto!important}
+
+
+/* Solution video native aspect ratio (5:4 like system-architecture) */
+.solution-img{aspect-ratio:1280/1360!important;max-width:720px!important;margin:0 auto!important}
+.solution-img video{object-fit:contain!important;background:#0E1117}
+
+
+/* WHY NOW video 16:9 cinematic banner (full width) */
+.whynow-img{aspect-ratio:16/9!important;max-width:none!important;width:100%!important;margin:0!important}
+.whynow-img video{object-fit:cover!important;background:#0E1117}
+
 </style>
 </head>
 <body>
@@ -520,7 +545,7 @@ video.sec-video{width:100%;height:100%;object-fit:cover;display:block;border-rad
 
 <!-- 1. HERO -->
 <section class="hero" id="hero">
-<video class="hero-bg" autoplay muted loop playsinline preload="auto"><source src="/videos/hero-penthouse.mp4" type="video/mp4"></video>
+<img src="/images/hero-penthouse.jpg" alt="Luxury penthouse with panoramic city view at golden hour" class="hero-bg">
 <div class="container">
 <div class="hero-inner">
 <h1>Intelligent Environmental Control<br>for the <em>Next Generation</em> of Buildings</h1>
@@ -560,7 +585,7 @@ video.sec-video{width:100%;height:100%;object-fit:cover;display:block;border-rad
 </ul></div>
 <div class="whynow-gap">Yet the market lacks a unified control layer. This is the gap ClimaNexus is built to solve.</div>
 </div>
-<div class="whynow-img"><video class="sec-video" autoplay muted loop playsinline preload="metadata"><source src="/videos/smart-home.mp4" type="video/mp4"></video></div>
+<div class="whynow-img"><video class="sec-video" autoplay muted loop playsinline preload="metadata"><source src="/videos/why-now-shift.mp4" type="video/mp4"></video></div>
 </div>
 </div>
 </section>
@@ -588,7 +613,7 @@ video.sec-video{width:100%;height:100%;object-fit:cover;display:block;border-rad
 <div class="container">
 <div class="sec-header"><div class="sec-label">Our Solution</div><h2>Standards-compliant (WHO/WELL/LEED), deterministic, AI-assisted environmental control platform</h2></div>
 <div class="solution-top">
-<div class="solution-img"><video class="sec-video" autoplay muted loop playsinline preload="metadata"><source src="/videos/over-shoulder.mp4" type="video/mp4"></video></div>
+<div class="solution-img"><video class="sec-video" autoplay muted loop playsinline preload="metadata"><source src="/videos/solution-compliance.mp4" type="video/mp4"></video></div>
 <div><p class="solution-intro">ClimaNexus introduces a new layer: <strong>A control intelligence that sits above HVAC devices and orchestrates the environment.</strong></p></div>
 </div>
 <div class="principles-grid">
@@ -606,7 +631,7 @@ video.sec-video{width:100%;height:100%;object-fit:cover;display:block;border-rad
 <section class="sec tech-bg fade-up" id="technology">
 <div class="container" style="position:relative;z-index:1">
 <div class="sec-header"><div class="sec-label">Technology</div><h2 style="color:#fff">System Architecture</h2></div>
-<div class="tech-video-wrap"><iframe src="https://www.youtube.com/embed/rzt8RlTeTzQ?autoplay=1&mute=1&loop=1&playlist=rzt8RlTeTzQ&controls=1&rel=0&modestbranding=1&playsinline=1" title="ClimaNexus System Architecture" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+<div class="tech-video-wrap"><video class="tech-video" autoplay muted loop playsinline preload="metadata"><source src="/videos/system-architecture.mp4" type="video/mp4"></video></div>
 <div class="flow-visual">
 <div class="flow-box"><div class="fl">Input</div><div class="fv">Sensors</div></div>
 <div class="flow-arrow">→</div>
@@ -644,24 +669,10 @@ video.sec-video{width:100%;height:100%;object-fit:cover;display:block;border-rad
 </ul>
 <a href="/demo" target="_blank" class="btn-launch">▶ Launch Interactive Demo →</a>
 </div>
-<div class="dashboard-mockup" aria-hidden="true">
-<div class="dm-header">
-<div class="dm-logo">CN</div>
-<div class="dm-title">Multi-Zone Floor Plan Viewer</div>
-<div class="dm-status">LIVE</div>
-</div>
-<div class="dm-grid" data-no-i18n>
-<div class="dm-zone normal"><span class="zn">Zone A · Living</span><span class="zs">NORMAL</span></div>
-<div class="dm-zone boost"><span class="zn">Zone B · Bedroom</span><span class="zs">IAQ_BOOST</span></div>
-<div class="dm-zone heat"><span class="zn">Zone C · Kitchen</span><span class="zs">HEAT_ASSIST</span></div>
-<div class="dm-zone normal"><span class="zn">Zone D · Office</span><span class="zs">NORMAL</span></div>
-</div>
-<div class="dm-charts" data-no-i18n>
-<div class="dm-chart"><span class="lb">CO₂</span><span class="br"><div style="width:62%"></div></span><span class="vl">680 ppm</span></div>
-<div class="dm-chart"><span class="lb">PM2.5</span><span class="br"><div style="width:38%"></div></span><span class="vl">19 µg/m³</span></div>
-<div class="dm-chart"><span class="lb">Temp</span><span class="br"><div style="width:72%"></div></span><span class="vl">23.4 °C</span></div>
-<div class="dm-chart"><span class="lb">Humid.</span><span class="br"><div style="width:55%"></div></span><span class="vl">52 %</span></div>
-</div>
+<div class="demo-video-frame">
+<video class="demo-recording" autoplay muted loop playsinline preload="metadata">
+<source src="/videos/demo-recording.mp4" type="video/mp4">
+</video>
 </div>
 </div>
 <div class="demo-note">⚠ Demo currently in Vietnamese · English version coming soon · <a href="/demo" target="_blank">Open in new tab →</a></div>
