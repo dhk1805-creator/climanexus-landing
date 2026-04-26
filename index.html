@@ -944,12 +944,12 @@ window.addEventListener('load', () => {
 
 
 <script>
-/* Slow video playback — cinematic luxury feel */
+/* Slow video playback 0.8x = 24fps cinematic film rate (smooth, not jittery) */
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('video').forEach(v => {
-    v.playbackRate = 0.65;
-    v.addEventListener('loadedmetadata', () => { v.playbackRate = 0.65; });
-    v.addEventListener('play', () => { v.playbackRate = 0.65; });
+    v.playbackRate = 0.8;
+    v.addEventListener('loadedmetadata', () => { v.playbackRate = 0.8; });
+    v.addEventListener('play', () => { v.playbackRate = 0.8; });
   });
 });
 </script>
