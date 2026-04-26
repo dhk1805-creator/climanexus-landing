@@ -1,27 +1,18 @@
-# Caddy config for ClimaNexus landing — explicit byte-range support for video streaming
+# Caddy config for ClimaNexus landing
+# Videos served by Cloudflare Stream (https://customer-iiya2h68v5nrm40u.cloudflarestream.com)
+# Audio + Images served from this server
 :{$PORT} {
 	root * .
 
 	# Headers for ALL responses
 	header {
-		# Critical for mobile video streaming
 		Accept-Ranges bytes
-		# Security
 		X-Content-Type-Options nosniff
 		X-Frame-Options SAMEORIGIN
 		Referrer-Policy strict-origin-when-cross-origin
 	}
 
-	# Video files: long cache + ensure byte-range
-	@videos {
-		path /videos/* /videos/posters/*
-	}
-	header @videos {
-		Cache-Control "public, max-age=2592000, immutable"
-		Accept-Ranges bytes
-	}
-
-	# Audio files: long cache + ensure byte-range (critical for streaming)
+	# Audio files: long cache + ensure byte-range (for ambient music streaming)
 	@audio {
 		path /audio/*
 	}
@@ -32,7 +23,7 @@
 
 	# Image files: long cache
 	@images {
-		path /images/* *.png *.jpg *.jpeg *.svg *.webp
+		path /images/* *.png *.jpg *.jpeg *.svg *.webp *.ico
 	}
 	header @images Cache-Control "public, max-age=2592000, immutable"
 
@@ -40,12 +31,11 @@
 	@demoExact path /demo
 	rewrite @demoExact /demo.html
 
-	# Static file server with byte-range support
+	# Static file server
 	file_server {
 		precompressed gzip br
 	}
 
-	# Fallback to index.html for SPA-style routes (none currently, but safe)
 	try_files {path} {path}/ /index.html
 
 	encode gzip zstd
