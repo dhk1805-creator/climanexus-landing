@@ -123,4 +123,6 @@ function i18n_apply(lang){
   tg.querySelectorAll('.lang-btn').forEach(b => b.addEventListener('click', () => i18n_apply(b.dataset.lang)));
   if (cta) nav.insertBefore(tg, cta); else nav.appendChild(tg);
   i18n_walk(n => i18n_orig.set(n, n.textContent)); i18n_snap = true;
-  const p = new URLSearchParams(window.location.sear
+  const p = new URLSearchParams(window.location.search);
+  if (p.get('lang') === 'vi') i18n_apply('vi');
+})();
