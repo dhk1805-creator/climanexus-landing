@@ -1,0 +1,35 @@
+# Source images / raw assets (already embedded as base64 trong index.html)
+*.png
+*.webp
+*.jpg
+*.jpeg
+*.svg
+*.jfif
+
+# But DO track these specific assets used as files (not embedded)
+!images/
+!images/**
+
+# Backup / old HTML versions
+*.bak
+*.bak-*
+index1.html
+index2.html
+climanexus-updated.html
+preview.html
+preview-*.html
+New Text Document.html
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/
+
+# Node / build (if added later)
+node_modules/
+dist/
+.env
+.env.local
