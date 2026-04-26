@@ -11,15 +11,16 @@
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
---primary:#0D3B66;--primary-mid:#1A6FA0;--primary-light:#2AABE2;
---accent:#4CB848;--accent-dark:#3A9A36;--warm:#F0A030;--danger:#E05555;
---surface:#F7F9FC;--white:#FFFFFF;--text:#1A2332;--text-sec:#5A6B7F;--text-muted:#8B9BB0;
---border:#E2E8F0;--r:16px;--r-sm:10px;
---shadow:0 4px 20px rgba(13,59,102,0.08);--shadow-lg:0 8px 40px rgba(13,59,102,0.1)
+--bg:#0A0E1A;--bg-elevated:#12182A;--surface:#12182A;--surface-card:#1A1F2E;--surface-alt:#1E2438;
+--primary:#00CED1;--primary-mid:#2E9BD6;--primary-light:#5EAA7D;
+--accent:#4CB848;--accent-dark:#3A9A36;--gold:#D4A053;--warm:#F0A030;--danger:#E74C3C;
+--white:#FFFFFF;--text:#E8E6DF;--text-sec:#8A8F9E;--text-muted:#555B6A;
+--border:rgba(0,206,209,0.15);--r:16px;--r-sm:10px;
+--shadow:0 4px 20px rgba(0,0,0,0.4);--shadow-lg:0 8px 40px rgba(0,0,0,0.5)
 }
 html{scroll-behavior:smooth}
-body{font-family:'Plus Jakarta Sans',-apple-system,sans-serif;color:var(--text);line-height:1.65;overflow-x:hidden;background:#fff}
-h1,h2,h3,h4,h5,h6{font-family:'Space Grotesk',sans-serif;font-weight:700;line-height:1.2;color:var(--primary)}
+body{font-family:'Plus Jakarta Sans',-apple-system,sans-serif;color:var(--text);line-height:1.65;overflow-x:hidden;background:var(--bg)}
+h1,h2,h3,h4,h5,h6{font-family:'Space Grotesk',sans-serif;font-weight:700;line-height:1.2;color:var(--text)}
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
 a{text-decoration:none}
 
@@ -295,6 +296,92 @@ html[lang="vi"] .nav-links a,html[lang="vi"] .btn,html[lang="vi"] .btn-launch{fo
 .lang-toggle button:hover{color:var(--primary);background:rgba(13,59,102,.06)}
 .lang-toggle button.active{color:var(--primary);background:rgba(13,59,102,.1)}
 .lang-toggle .lang-sep{color:var(--text-muted);opacity:0.4;font-weight:300}
+
+/* OBSIDIAN PALETTE OVERRIDES — force dark theme on all sections */
+nav{background:rgba(10,14,26,0.85)!important;backdrop-filter:blur(20px)}
+nav.scrolled{border-bottom-color:var(--border)!important;box-shadow:0 1px 3px rgba(0,0,0,0.3)!important}
+.nav-logo .nav-cta{color:#fff!important}
+.nav-links a{color:var(--text-sec)!important}
+.nav-links a:hover{color:var(--primary)!important}
+.nav-cta{background:var(--primary)!important;color:#0A0E1A!important;font-weight:700}
+.nav-cta:hover{background:var(--primary-mid)!important;color:#fff!important}
+.lang-toggle button{color:var(--text-sec)!important}
+.lang-toggle button:hover,.lang-toggle button.active{color:var(--primary)!important;background:rgba(0,206,209,0.1)!important}
+
+.sec{background:var(--bg)}
+.sec-alt{background:var(--bg-elevated)!important}
+.sec-dark{background:var(--bg-elevated)!important}
+.sec-header h2{color:var(--text)}
+.sec-header p{color:var(--text-sec)}
+.sec-label{color:var(--primary)!important}
+
+/* Cards: dark surface + cyan accent border */
+.team-card,.why-card,.principle-card,.benefit-card,.problem-card,.roadmap-card,.funding-area{
+  background:var(--surface-card)!important;
+  border:1px solid var(--border)!important;
+  color:var(--text)
+}
+.team-card h4,.why-card h4,.principle-card h4,.benefit-card h4,.roadmap-card h4,.funding-area h4{color:var(--text)!important}
+.team-name{color:var(--text)!important}
+.team-role{color:var(--gold)!important;font-weight:700}
+.team-desc{color:var(--text-sec)!important}
+.team-card{border-top:3px solid var(--primary)!important}
+.team-card[style*="--accent"]{border-top-color:var(--accent)!important}
+.team-note{color:var(--text-sec)!important;text-align:center;margin-top:24px;font-style:italic}
+
+/* WhyNow list */
+.whynow-list li{color:var(--text-sec)!important;border-bottom-color:var(--border)!important}
+.whynow-ready{background:rgba(76,184,72,0.08)!important;border-left-color:var(--accent)!important}
+.whynow-gap{background:var(--surface-card)!important;color:var(--text)!important;border:1px solid var(--border)}
+
+/* Solution principles */
+.principle-num{color:var(--primary)!important}
+.principle-card p{color:var(--text-sec)!important}
+.solution-intro{color:var(--text)!important}
+
+/* Tech section */
+.tech-bg{background:linear-gradient(180deg,var(--bg-elevated) 0%,var(--bg) 100%)!important}
+.flow-box{background:var(--surface-card)!important;border:1px solid var(--border)!important;color:var(--text)}
+.flow-arrow{color:var(--primary)!important}
+.tech-diff span{background:var(--surface-card);color:var(--text-sec);padding:8px 16px;border-radius:8px;border:1px solid var(--border)}
+.tech-diff .highlight{background:var(--primary)!important;color:#0A0E1A!important;font-weight:700}
+
+/* Benefits */
+.bc-list li{color:var(--text-sec)!important}
+.bc-for{color:var(--primary)!important;font-weight:700}
+
+/* Market */
+.market-overlay{background:rgba(10,14,26,0.7)}
+.market-stat .mv{color:var(--primary)!important}
+.market-stat .ml{color:var(--text-sec)!important}
+.market-gap .mg-label{color:var(--text-sec)!important}
+.market-gap .mg-value{color:var(--text)!important}
+
+/* Roadmap */
+.roadmap-stage{color:var(--gold)!important;font-weight:700}
+.roadmap-card ul li{color:var(--text-sec)!important}
+.roadmap-dot{background:var(--primary)!important}
+
+/* Funding */
+.fa-icon{font-size:2rem}
+.funding-area p{color:var(--text-sec)!important}
+.funding-obj{background:var(--surface-card)!important;border:1px solid var(--border);color:var(--text)!important}
+
+/* Buttons - keep accent green for primary CTA, cyan for explore */
+.btn-p{background:var(--primary)!important;color:#0A0E1A!important;font-weight:700}
+.btn-p:hover{background:var(--primary-mid)!important;color:#fff!important;box-shadow:0 4px 16px rgba(0,206,209,0.3)!important}
+.btn-w{background:transparent!important;color:var(--text)!important;border:1.5px solid var(--border)!important}
+.btn-w:hover{border-color:var(--primary)!important;background:rgba(0,206,209,0.05)!important;color:var(--primary)!important}
+.btn-g{background:var(--accent)!important;color:#fff!important}
+.btn-g:hover{background:var(--accent-dark)!important}
+
+/* Footer */
+footer{background:var(--bg)!important;border-top:1px solid var(--border)!important}
+.footer-text{color:var(--text-muted)!important}
+
+/* Hero gradient adjustment */
+.hero::after{background:linear-gradient(to top,var(--bg),transparent)!important}
+
 </style>
 </head>
 <body>
