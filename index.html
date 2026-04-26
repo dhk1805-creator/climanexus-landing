@@ -686,7 +686,7 @@ video.sec-video{width:100%;height:100%;object-fit:cover;display:block;border-rad
 <div class="container" style="position:relative;z-index:1">
 <div class="sec-header"><div class="sec-label">Technology</div><h2 style="color:#fff">System Architecture</h2></div>
 <div class="tech-video-wrap"><iframe class="tech-video cf-stream"
-  src="https://customer-iiya2h68v5nrm40u.cloudflarestream.com/00e732d3946037351b411567b384a901/iframe?autoplay=true&muted=true&loop=true&controls=false&preload=auto&primaryColor=%23C9A96E"
+  src="https://customer-iiya2h68v5nrm40u.cloudflarestream.com/dce92ef5b2be4247b4b5fd6fbf91dde6/iframe?autoplay=true&muted=true&loop=true&controls=false&preload=auto&primaryColor=%23C9A96E"
   style="border:none;position:absolute;inset:0;width:100%;height:100%"
   allow="accelerometer; gyroscope; autoplay; encrypted-media"
   allowfullscreen="false"
@@ -990,18 +990,18 @@ window.addEventListener('load', () => {
 
 
 <script>
-/* Ambient music toggle — gentle fade in/out, persists state via localStorage.
-   Default: OFF. Click toggle → fades in. Refresh: remembers last state.
-   Auto-attempt play on load only if user previously enabled it. */
+/* Ambient music — auto-play. Browser blocks autoplay audio? Start on FIRST user interaction
+   (any click/touch/scroll/keypress). Toggle button now acts as MUTE indicator only. */
 (function(){
   var audio = document.getElementById('ambient-audio');
   var btn   = document.getElementById('music-toggle');
-  if (!audio || !btn) return;
+  if (!audio) return;
 
-  var KEY = 'cnx-ambient-music';
-  var TARGET_VOLUME = 0.28;   // gentle, non-intrusive
+  var TARGET_VOLUME = 0.28;
   var FADE_MS = 1400;
   audio.volume = 0;
+  audio.muted = false;
+  audio.preload = 'auto';
 
   function fadeTo(target, done){
     var start = audio.volume;
@@ -1016,43 +1016,44 @@ window.addEventListener('load', () => {
   }
 
   function play(){
-    audio.preload = 'auto';
     var p = audio.play();
     if (p && typeof p.catch === 'function'){
       p.then(function(){
-        btn.classList.add('playing');
+        if (btn) btn.classList.add('playing');
         fadeTo(TARGET_VOLUME);
-        try{ localStorage.setItem(KEY, 'on'); }catch(e){}
       }).catch(function(){
-        // browser blocked — wait for user interaction
-        btn.classList.remove('playing');
+        // browser blocked — will retry on first user interaction
       });
     }
   }
   function pause(){
     fadeTo(0, function(){ audio.pause(); });
-    btn.classList.remove('playing');
-    try{ localStorage.setItem(KEY, 'off'); }catch(e){}
+    if (btn) btn.classList.remove('playing');
   }
 
-  btn.addEventListener('click', function(){
-    if (audio.paused) play(); else pause();
-  });
-
-  // Restore previous state
-  var prev = null;
-  try{ prev = localStorage.getItem(KEY); }catch(e){}
-  if (prev === 'on'){
-    // Try autoplay; if browser blocks, will play on first user interaction
-    setTimeout(play, 600);
-    var resume = function(){
-      if (audio.paused) play();
-      document.removeEventListener('click', resume);
-      document.removeEventListener('touchstart', resume);
-    };
-    document.addEventListener('click', resume, { once: true });
-    document.addEventListener('touchstart', resume, { once: true, passive: true });
+  // Toggle button still works as mute (optional)
+  if (btn){
+    btn.addEventListener('click', function(){
+      if (audio.paused) play(); else pause();
+    });
   }
+
+  // Try autoplay immediately
+  setTimeout(play, 200);
+
+  // Fallback: any user interaction unlocks audio (one-shot, removes self)
+  function unlock(){
+    if (audio.paused) play();
+    document.removeEventListener('click', unlock);
+    document.removeEventListener('touchstart', unlock);
+    document.removeEventListener('scroll', unlock);
+    document.removeEventListener('keydown', unlock);
+  }
+  document.addEventListener('click', unlock, { once: true });
+  document.addEventListener('touchstart', unlock, { once: true, passive: true });
+  document.addEventListener('scroll', unlock, { once: true, passive: true });
+  document.addEventListener('keydown', unlock, { once: true });
+
 })();
 </script>
 
@@ -1129,3 +1130,4 @@ window.addEventListener('load', () => {
 
 </body>
 </html>
+            
