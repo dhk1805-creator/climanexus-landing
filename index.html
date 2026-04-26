@@ -80,9 +80,10 @@ nav.scrolled{border-bottom-color:var(--border);box-shadow:0 1px 3px rgba(13,59,1
 .whynow-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 .whynow-list{list-style:none}
 .whynow-list li{font-size:.92rem;color:var(--text-sec);padding:10px 0 10px 28px;position:relative;border-bottom:1px solid var(--border)}
-.whynow-list li::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:10px;height:10px;border-radius:50%;background:var(--danger);opacity:.7}
+.whynow-list li::before{content:'';position:absolute;left:0;top:14px;width:14px;height:14px;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A8504A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z'/><line x1='12' y1='9' x2='12' y2='13'/><line x1='12' y1='17' x2='12.01' y2='17'/></svg>") no-repeat center;background-size:contain}
+.whynow-list li{padding:14px 0 14px 28px}
 .whynow-ready{margin-top:24px;padding:20px;background:rgba(76,184,72,.06);border-left:3px solid var(--accent);border-radius:0 var(--r-sm) var(--r-sm) 0}
-.whynow-ready li::before{background:var(--accent)!important;opacity:1!important}
+.whynow-ready li::before{background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234CB848' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") no-repeat center!important;background-size:contain!important;opacity:1!important;width:14px!important;height:14px!important;border-radius:0!important}
 .whynow-img{border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-lg)}
 .whynow-img img{width:100%;height:100%;object-fit:cover;display:block}
 .whynow-gap{margin-top:32px;padding:24px;background:var(--primary);color:#fff;border-radius:var(--r);text-align:center;font-size:1rem;font-weight:600}
@@ -302,11 +303,11 @@ html[lang="vi"] .nav-links a,html[lang="vi"] .btn,html[lang="vi"] .btn-launch{fo
 /* OBSIDIAN PALETTE OVERRIDES — force dark theme on all sections */
 nav{background:rgba(10,14,26,0.85)!important;backdrop-filter:blur(20px)}
 nav.scrolled{border-bottom-color:var(--border)!important;box-shadow:0 1px 3px rgba(0,0,0,0.3)!important}
-.nav-logo .nav-cta{color:#fff!important}
+/* removed buggy nav-logo nav-cta */
 .nav-links a{color:var(--text-sec)!important}
 .nav-links a:hover{color:var(--primary)!important}
-.nav-cta{background:var(--primary)!important;color:#000!important;font-weight:900!important;letter-spacing:0!important;text-shadow:none!important;border:none!important}
-.nav-cta:hover{background:var(--primary-mid)!important;color:#fff!important}
+.nav-cta{background:transparent!important;color:var(--primary)!important;font-weight:700!important;letter-spacing:0.5px;border:1.5px solid var(--primary)!important;text-transform:uppercase;font-size:.78rem!important;transition:all .25s}
+.nav-cta:hover{background:var(--primary)!important;color:#0A0A0A!important;box-shadow:0 4px 16px rgba(201,169,110,0.35)!important;font-weight:900!important}
 .lang-toggle button{color:var(--text-sec)!important}
 .lang-toggle button:hover,.lang-toggle button.active{color:var(--primary)!important;background:rgba(201,169,110,0.12)!important}
 
@@ -370,7 +371,7 @@ nav.scrolled{border-bottom-color:var(--border)!important;box-shadow:0 1px 3px rg
 .funding-obj{background:var(--surface-card)!important;border:1px solid var(--border);color:var(--text)!important}
 
 /* Buttons - keep accent green for primary CTA, cyan for explore */
-.btn-p{background:var(--primary)!important;color:#000!important;font-weight:900!important;letter-spacing:0!important}
+.btn-p{background:linear-gradient(135deg,#E0C994,#C9A96E,#A88B53)!important;color:#000!important;font-weight:900!important;letter-spacing:0.3px!important;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.15),0 4px 12px rgba(0,0,0,0.4)!important;text-shadow:0 1px 0 rgba(255,255,255,0.15)}
 .btn-p:hover{background:var(--primary-mid)!important;color:#fff!important;box-shadow:0 4px 16px rgba(201,169,110,0.35)!important}
 .btn-w{background:transparent!important;color:var(--text)!important;border:1.5px solid var(--border)!important}
 .btn-w:hover{border-color:var(--primary)!important;background:rgba(201,169,110,0.06)!important;color:var(--primary)!important}
