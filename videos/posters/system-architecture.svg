@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1290" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0E1117"/>
+      <stop offset="1" stop-color="#161B26"/>
+    </linearGradient>
+    <pattern id="circuit" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M0 40 H80 M40 0 V80" stroke="#C9A96E" stroke-width="0.4" stroke-opacity="0.15" fill="none"/>
+      <circle cx="40" cy="40" r="1.2" fill="#C9A96E" fill-opacity="0.3"/>
+    </pattern>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E2C68A"/>
+      <stop offset="1" stop-color="#C9A96E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="1290" fill="url(#bg)"/>
+  <rect width="1280" height="1290" fill="url(#circuit)"/>
+
+  <!-- Subtle radial glows -->
+  <circle cx="640" cy="200" r="180" fill="#C9A96E" fill-opacity="0.06" filter="url(#glow)"/>
+  <circle cx="640" cy="650" r="280" fill="#4DD2D2" fill-opacity="0.05" filter="url(#glow)"/>
+
+  <!-- ============ CLOUD AI (top) ============ -->
+  <g transform="translate(640, 180)">
+    <!-- cloud icon -->
+    <g filter="url(#softglow)" stroke="url(#goldGrad)" stroke-width="3" fill="none">
+      <path d="M -90 0 Q -90 -40 -50 -40 Q -45 -70 -10 -70 Q 25 -70 30 -40 Q 70 -40 70 0 Q 70 30 30 30 L -50 30 Q -90 30 -90 0 Z"/>
+    </g>
+    <!-- label -->
+    <text x="0" y="90" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-size="48" fill="#E8E2D5" letter-spacing="2">Cloud AI</text>
+    <text x="0" y="120" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="14" fill="#9A9588" letter-spacing="3">FORECASTING · ADVISORY</text>
+  </g>
+
+  <!-- Arrows Cloud ↔ Edge Hub -->
+  <g stroke="#C9A96E" stroke-width="2" fill="none" opacity="0.7">
+    <path d="M 600 340 V 460" marker-end="url(#arrUp)"/>
+    <path d="M 680 460 V 340" marker-end="url(#arrDn)"/>
+  </g>
+
+  <defs>
+    <marker id="arrUp" viewBox="0 0 10 10" refX="5" refY="0" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 10 L5 0 L10 10 Z" fill="#C9A96E"/>
+    </marker>
+    <marker id="arrDn" viewBox="0 0 10 10" refX="5" refY="10" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L5 10 L10 0 Z" fill="#C9A96E"/>
+    </marker>
+    <marker id="arrR" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#4DD2D2"/>
+    </marker>
+  </defs>
+
+  <!-- ============ EDGE HUB (middle, large) ============ -->
+  <g transform="translate(140, 470)">
+    <!-- outer board with circuit traces -->
+    <rect x="0" y="0" width="1000" height="320" rx="14" fill="#0A0E15" stroke="url(#goldGrad)" stroke-width="3" filter="url(#softglow)"/>
+
+    <!-- decorative circuit traces -->
+    <g stroke="#C9A96E" stroke-width="1" stroke-opacity="0.45" fill="none">
+      <path d="M 0 80 H 90 V 60 H 130"/>
+      <path d="M 0 160 H 70 V 200 H 110"/>
+      <path d="M 0 250 H 100"/>
+      <path d="M 1000 80 H 910 V 60 H 870"/>
+      <path d="M 1000 160 H 930 V 200 H 890"/>
+      <path d="M 1000 250 H 900"/>
+      <circle cx="92" cy="80" r="3" fill="#C9A96E"/>
+      <circle cx="908" cy="80" r="3" fill="#C9A96E"/>
+      <circle cx="100" cy="250" r="3" fill="#C9A96E"/>
+      <circle cx="900" cy="250" r="3" fill="#C9A96E"/>
+    </g>
+
+    <!-- Edge Hub label -->
+    <text x="500" y="50" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-size="38" fill="url(#goldGrad)">Edge Hub</text>
+    <text x="500" y="74" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#9A9588" letter-spacing="3">DETERMINISTIC STATE MACHINE</text>
+
+    <!-- 3 state nodes -->
+    <g transform="translate(0, 130)">
+      <!-- IDLE -->
+      <g transform="translate(120, 0)">
+        <rect x="0" y="0" width="220" height="100" rx="10" fill="none" stroke="#4DD2D2" stroke-width="2.5" filter="url(#softglow)"/>
+        <text x="110" y="58" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-weight="700" font-size="34" fill="#4DD2D2" letter-spacing="3">IDLE</text>
+      </g>
+      <!-- PROCESS -->
+      <g transform="translate(390, 0)">
+        <rect x="0" y="0" width="220" height="100" rx="10" fill="none" stroke="#4DD2D2" stroke-width="2.5" filter="url(#softglow)"/>
+        <text x="110" y="58" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-weight="700" font-size="30" fill="#4DD2D2" letter-spacing="3">PROCESS</text>
+      </g>
+      <!-- SEND -->
+      <g transform="translate(660, 0)">
+        <rect x="0" y="0" width="220" height="100" rx="10" fill="none" stroke="#4DD2D2" stroke-width="2.5" filter="url(#softglow)"/>
+        <text x="110" y="58" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-weight="700" font-size="34" fill="#4DD2D2" letter-spacing="3">SEND</text>
+      </g>
+      <!-- arrows between -->
+      <g stroke="#4DD2D2" stroke-width="3" fill="none">
+        <path d="M 340 50 L 388 50" marker-end="url(#arrR)"/>
+        <path d="M 610 50 L 658 50" marker-end="url(#arrR)"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Arrows Edge Hub ↔ ERV (down-left) -->
+  <g stroke="#C9A96E" stroke-width="2" fill="none" opacity="0.7">
+    <path d="M 290 800 V 920" marker-end="url(#arrUp)"/>
+    <path d="M 360 920 V 800" marker-end="url(#arrDn)"/>
+  </g>
+
+  <!-- Arrows Edge Hub ↔ AC (down-right) -->
+  <g stroke="#C9A96E" stroke-width="2" fill="none" opacity="0.7">
+    <path d="M 920 800 V 920" marker-end="url(#arrUp)"/>
+    <path d="M 990 920 V 800" marker-end="url(#arrDn)"/>
+  </g>
+
+  <!-- ============ ERV (bottom-left) ============ -->
+  <g transform="translate(180, 940)">
+    <!-- icon: heat exchanger box -->
+    <g filter="url(#softglow)" stroke="url(#goldGrad)" stroke-width="2.5" fill="none">
+      <rect x="0" y="0" width="200" height="160" rx="6"/>
+      <line x1="0" y1="35" x2="200" y2="35"/>
+      <!-- vents -->
+      <line x1="20" y1="60" x2="180" y2="60"/>
+      <line x1="20" y1="80" x2="180" y2="80"/>
+      <line x1="20" y1="100" x2="180" y2="100"/>
+      <line x1="20" y1="120" x2="180" y2="120"/>
+      <line x1="20" y1="140" x2="180" y2="140"/>
+      <!-- diagonal flow indicator -->
+      <path d="M 30 50 L 60 50" stroke="#4DD2D2"/>
+      <circle cx="170" cy="50" r="6" stroke="#4DD2D2"/>
+    </g>
+    <text x="100" y="200" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-size="42" fill="url(#goldGrad)">ERV</text>
+    <text x="100" y="226" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#9A9588" letter-spacing="2">ENERGY RECOVERY VENTILATION</text>
+  </g>
+
+  <!-- ============ AC (bottom-right) ============ -->
+  <g transform="translate(900, 940)">
+    <!-- icon: outdoor unit with fan -->
+    <g filter="url(#softglow)" stroke="url(#goldGrad)" stroke-width="2.5" fill="none">
+      <rect x="0" y="0" width="200" height="160" rx="6"/>
+      <line x1="0" y1="35" x2="200" y2="35"/>
+      <!-- fan circles -->
+      <circle cx="100" cy="100" r="50"/>
+      <circle cx="100" cy="100" r="6" fill="url(#goldGrad)"/>
+      <!-- fan blades (simplified) -->
+      <path d="M 100 60 Q 130 75 100 100 Q 70 75 100 60" />
+      <path d="M 140 100 Q 125 130 100 100 Q 125 70 140 100" />
+      <path d="M 100 140 Q 70 125 100 100 Q 130 125 100 140" />
+    </g>
+    <text x="100" y="200" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-size="42" fill="url(#goldGrad)">AC</text>
+    <text x="100" y="226" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#9A9588" letter-spacing="2">HEAT PUMP · INVERTER</text>
+  </g>
+
+  <!-- Bottom tagline -->
+  <text x="640" y="1230" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-size="24" fill="#9A9588" letter-spacing="3">Edge-first orchestration · Cloud advises, Edge decides</text>
+</svg>

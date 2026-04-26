@@ -944,14 +944,74 @@ window.addEventListener('load', () => {
 
 
 <script>
-/* Slow video playback 0.8x = 24fps cinematic film rate (smooth, not jittery) */
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('video').forEach(v => {
-    v.playbackRate = 0.8;
-    v.addEventListener('loadedmetadata', () => { v.playbackRate = 0.8; });
-    v.addEventListener('play', () => { v.playbackRate = 0.8; });
-  });
-});
+/* Mobile-friendly video playback:
+   - Force muted+playsinline+autoplay attributes (some browsers strip)
+   - Explicitly call play() on visible (IntersectionObserver) for iOS Safari
+   - 0.8x playback rate = 24fps cinematic film rate (smooth, not jittery)
+   - Fallback: play on first user touch anywhere on page
+*/
+(function(){
+  function setupVideo(v){
+    // Ensure mobile autoplay attributes
+    v.muted = true;
+    v.defaultMuted = true;
+    v.playsInline = true;
+    v.setAttribute('muted','');
+    v.setAttribute('playsinline','');
+    v.setAttribute('webkit-playsinline','');
+    v.setAttribute('autoplay','');
+
+    var setRate = function(){ try{ v.playbackRate = 0.8; }catch(e){} };
+    setRate();
+    v.addEventListener('loadedmetadata', setRate);
+    v.addEventListener('play', setRate);
+
+    var tryPlay = function(){
+      var p = v.play();
+      if (p && typeof p.catch === 'function') p.catch(function(){});
+    };
+    tryPlay();
+    v.addEventListener('canplay', tryPlay);
+    v.addEventListener('loadeddata', tryPlay);
+  }
+
+  function init(){
+    var vids = document.querySelectorAll('video');
+    vids.forEach(setupVideo);
+
+    // IntersectionObserver — play when visible (battery-friendly + iOS Safari friendly)
+    if ('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          var v = e.target;
+          if (e.isIntersecting){
+            var p = v.play();
+            if (p && typeof p.catch === 'function') p.catch(function(){});
+          }
+        });
+      }, { threshold: 0.1 });
+      vids.forEach(function(v){ io.observe(v); });
+    }
+
+    // Fallback: any user touch/click anywhere triggers all videos to play
+    var unlock = function(){
+      vids.forEach(function(v){
+        var p = v.play();
+        if (p && typeof p.catch === 'function') p.catch(function(){});
+      });
+      document.removeEventListener('touchstart', unlock);
+      document.removeEventListener('click', unlock);
+    };
+    document.addEventListener('touchstart', unlock, { passive: true, once: true });
+    document.addEventListener('click', unlock, { once: true });
+  }
+
+  if (document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
 </script>
 
 </body>
