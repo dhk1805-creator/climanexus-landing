@@ -1,7 +1,7 @@
 /* ClimaNexus i18n EN/VI Toggle - sentence case for VI */
 const i18n_dict = {
 "Why Now":"Tại sao bây giờ","Problem":"Vấn đề","Solution":"Giải pháp","Technology":"Công nghệ","Demo":"Demo","Benefits":"Lợi ích","Roadmap":"Lộ trình","Start a Conversation":"Bắt đầu trao đổi",
-"Intelligent Environmental Control":"Điều khiển môi trường thông minh","for the":"cho","Next Generation":"thế hệ mới","of Buildings":"của công trình",
+"Intelligent Environmental Control":"Điều khiển môi trường thông minh","for the":"cho các công trình","Next Generation":"thế hệ mới","of Buildings":"",
 "Transforming how residential environments are managed — from fragmented HVAC systems to a unified, intelligent IAQ/IEQ control platform.":"Chuyển đổi cách quản lý môi trường nhà ở — từ các hệ thống HVAC rời rạc thành nền tảng điều khiển IAQ/IEQ thống nhất, thông minh.",
 "Automatically balance air quality, thermal comfort, and energy efficiency":"Tự động cân bằng chất lượng không khí, tiện nghi nhiệt và hiệu quả năng lượng",
 "Built on deterministic control logic with AI-assisted optimization":"Xây dựng trên logic điều khiển xác định với tối ưu hóa hỗ trợ bởi AI",
@@ -15,14 +15,14 @@ const i18n_dict = {
 "Residential buildings — the largest built environment segment — remain structurally under-optimized":"Công trình nhà ở — phân khúc môi trường xây dựng lớn nhất — vẫn chưa được tối ưu về cấu trúc",
 "Sensors are affordable":"Cảm biến đã rẻ","Edge computing is reliable":"Edge computing đã đáng tin cậy","AI is actionable":"AI đã ứng dụng được",
 "Yet the market lacks a unified control layer. This is the gap ClimaNexus is built to solve.":"Tuy nhiên thị trường thiếu một lớp điều khiển thống nhất. Đây là khoảng trống ClimaNexus được xây dựng để giải quyết.",
-"The Problem":"Vấn đề","Homes are filled with devices, but lack intelligence":"Nhà đầy thiết bị, nhưng thiếu trí tuệ điều khiển",
+"The Problem":"Vấn đề","Homes are filled with devices, but lack intelligence":"Nhà đầy thiết bị, nhưng thiếu logic điều khiển",
 "Independent Operation":"Vận hành độc lập","HVAC systems, air purifiers, ERV/HRV units operate independently":"Các hệ thống HVAC, máy lọc khí, ERV/HRV vận hành độc lập",
 "Unreadable Data":"Dữ liệu khó đọc","Data is available but not interpretable":"Dữ liệu có sẵn nhưng không thể diễn giải",
 "No Control Logic":"Thiếu logic điều khiển","Control logic is inconsistent or absent":"Logic điều khiển không nhất quán hoặc không tồn tại",
 "System Conflicts":"Xung đột hệ thống","Systems often conflict with each other":"Các hệ thống thường xung đột với nhau",
 "Poor IAQ despite high investment":"IAQ kém dù đầu tư cao","Energy waste":"Lãng phí năng lượng","Unpredictable comfort":"Tiện nghi không dự đoán được","No measurable performance":"Không có hiệu suất đo lường được",
 "The problem is not hardware.":"Vấn đề không nằm ở phần cứng.","The problem is the absence of a coordinated control system.":"Vấn đề là sự thiếu vắng hệ thống điều khiển có phối hợp.",
-"Our Solution":"Giải pháp của chúng tôi","A deterministic, AI-assisted environmental control platform":"Nền tảng điều khiển môi trường xác định, hỗ trợ bởi AI",
+"Our Solution":"Giải pháp của chúng tôi","Standards-compliant (WHO/WELL/LEED), deterministic, AI-assisted environmental control platform":"Nền tảng điều khiển môi trường theo WHO, WELL, LEED, hỗ trợ bởi AI",
 "ClimaNexus introduces a new layer:":"ClimaNexus giới thiệu một lớp mới:",
 "A control intelligence that sits above HVAC devices and orchestrates the environment.":"Trí tuệ điều khiển nằm trên các thiết bị HVAC và điều phối toàn bộ môi trường.",
 "IAQ-Driven Operation":"Vận hành hướng IAQ","Ventilation and system behavior respond directly to CO₂, PM2.5, Temperature, and Humidity.":"Thông gió và hành vi hệ thống phản ứng trực tiếp với CO₂, PM2.5, nhiệt độ và độ ẩm.",
@@ -36,7 +36,7 @@ const i18n_dict = {
 "System Architecture":"Kiến trúc hệ thống","Input":"Đầu vào","Sensors":"Cảm biến","Logic":"Logic","Edge Controller":"Bộ điều khiển edge","Output":"Đầu ra","HVAC Systems":"Hệ thống HVAC","Optimization":"Tối ưu hóa","Cloud AI":"AI trên cloud",
 "Sensors provide real-time environmental data. Edge controller executes deterministic logic. HVAC systems respond dynamically. Cloud AI continuously optimizes performance.":"Cảm biến cung cấp dữ liệu môi trường thời gian thực. Bộ điều khiển edge thực thi logic xác định. Hệ thống HVAC phản ứng linh hoạt. AI trên cloud liên tục tối ưu hiệu suất.",
 "Not a device":"Không phải thiết bị","Not a BMS":"Không phải BMS","Not an app":"Không phải ứng dụng","It is a control intelligence layer":"Đó là một lớp trí tuệ điều khiển",
-"Interactive Demo":"Demo tương tác","Experience deterministic control in real-time":"Trải nghiệm điều khiển xác định trong thời gian thực",
+"Interactive Demo":"Demo tương tác","Experience deterministic control in real-time":"Trải nghiệm điều khiển IAQ trong thời gian thực",
 "A working visualization of how ClimaNexus orchestrates HVAC across multiple zones — built on the same logic that runs in production.":"Trực quan hóa cách ClimaNexus điều phối HVAC qua nhiều vùng — dựa trên cùng logic chạy trong production.",
 "Live multi-zone floor plan with simulated sensor data (CO₂, PM2.5, temperature, humidity)":"Floor plan đa vùng trực tiếp với dữ liệu cảm biến mô phỏng (CO₂, PM2.5, nhiệt độ, độ ẩm)",
 "Interactive state machine in action: NORMAL / IAQ_BOOST / HEAT_ASSIST / DEHUM / ALARM":"Máy trạng thái tương tác đang hoạt động: NORMAL / IAQ_BOOST / HEAT_ASSIST / DEHUM / ALARM",
@@ -73,7 +73,7 @@ const i18n_dict = {
 "Product Development":"Phát triển sản phẩm","System optimization & firmware":"Tối ưu hệ thống & firmware","Certification":"Chứng nhận","Standardization & compliance":"Chuẩn hóa & tuân thủ",
 "Market Expansion":"Mở rộng thị trường","APAC focus & regional growth":"Tập trung APAC & tăng trưởng khu vực","Strategic Partnerships":"Đối tác chiến lược","Developers & contractors":"Chủ đầu tư & nhà thầu",
 "Build ClimaNexus into the de-facto IAQ/IEQ control platform for residential buildings.":"Xây dựng ClimaNexus thành nền tảng điều khiển IAQ/IEQ tiêu chuẩn cho nhà ở.",
-"Let's Connect":"Kết nối","Let's define the future of indoor environments together":"Cùng định nghĩa tương lai môi trường trong nhà",
+"Let's Connect":"Kết nối","Let's define the future of indoor environments together":"Cùng định nghĩa môi trường trong ngôi nhà tương lai của bạn",
 "We are actively engaging with:":"Chúng tôi đang chủ động làm việc với:",
 "Strategic Investors":"Nhà đầu tư chiến lược","Real Estate Developers":"Chủ đầu tư bất động sản","HVAC Partners":"Đối tác HVAC","Technology Collaborators":"Đối tác công nghệ",
 "Discuss Partnership":"Thảo luận đối tác","Request Demo":"Yêu cầu demo","Explore Investment":"Tìm hiểu đầu tư",
@@ -91,6 +91,7 @@ function i18n_walk(cb){
       const t = n.parentElement.tagName;
       if (t === 'SCRIPT' || t === 'STYLE') return NodeFilter.FILTER_REJECT;
       if (n.parentElement.closest('.lang-toggle')) return NodeFilter.FILTER_REJECT;
+      if (n.parentElement.closest('[data-no-i18n]')) return NodeFilter.FILTER_REJECT;
       return NodeFilter.FILTER_ACCEPT;
     }
   });
@@ -122,6 +123,4 @@ function i18n_apply(lang){
   tg.querySelectorAll('.lang-btn').forEach(b => b.addEventListener('click', () => i18n_apply(b.dataset.lang)));
   if (cta) nav.insertBefore(tg, cta); else nav.appendChild(tg);
   i18n_walk(n => i18n_orig.set(n, n.textContent)); i18n_snap = true;
-  const p = new URLSearchParams(window.location.search);
-  if (p.get('lang') === 'vi') i18n_apply('vi');
-})();
+  const p = new URLSearchParams(window.location.sear
