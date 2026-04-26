@@ -9,6 +9,8 @@
 # But DO track these specific assets used as files (not embedded)
 !images/
 !images/**
+!videos/posters/
+!videos/posters/**
 
 # Backup / old HTML versions
 *.bak
