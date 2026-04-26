@@ -437,6 +437,20 @@ footer{background:var(--bg)!important;border-top:1px solid var(--border)!importa
 /* 1. Gold scroll progress bar */
 #scroll-progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,#C9A96E 0%,#E0C994 50%,#C9A96E 100%);z-index:9999;width:0%;transition:width 0.1s ease;box-shadow:0 0 8px rgba(201,169,110,0.5)}
 
+/* ===== Ambient music toggle (bottom-right floating) ===== */
+#music-toggle{position:fixed;bottom:24px;right:24px;z-index:9998;display:inline-flex;align-items:center;gap:8px;padding:10px 14px 10px 12px;background:rgba(14,17,23,0.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(201,169,110,0.28);border-radius:999px;color:#C9A96E;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:all 0.4s cubic-bezier(0.16,1,0.3,1);box-shadow:0 8px 24px rgba(0,0,0,0.4)}
+#music-toggle:hover{border-color:rgba(201,169,110,0.6);color:#E0C994;transform:translateY(-2px);box-shadow:0 12px 32px rgba(201,169,110,0.18)}
+#music-toggle svg{display:block}
+#music-toggle .ic-on{display:none}
+#music-toggle.playing .ic-off{display:none}
+#music-toggle.playing .ic-on{display:block;animation:musicPulse 2.4s ease-in-out infinite}
+#music-toggle.playing{border-color:rgba(201,169,110,0.55);background:rgba(20,25,35,0.85);box-shadow:0 0 0 0 rgba(201,169,110,0),0 8px 24px rgba(0,0,0,0.4)}
+@keyframes musicPulse{0%,100%{opacity:0.7}50%{opacity:1}}
+@media(max-width:600px){
+  #music-toggle{bottom:16px;right:16px;padding:9px 12px}
+  #music-toggle .mt-label{display:none}
+}
+
 /* 3. Section gold dividers (between sections) */
 .sec + .sec::before,.sec + .demo-sec::before,.demo-sec + .sec::before,.cta-sec::before{content:'';display:block;position:absolute;top:0;left:50%;transform:translateX(-50%);width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--primary),transparent);opacity:0.5}
 .sec,.demo-sec,.cta-sec{position:relative}
@@ -559,6 +573,16 @@ video.sec-video{width:100%;height:100%;object-fit:cover;display:block;border-rad
 <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></button>
 </div>
 </nav>
+
+<!-- Ambient music toggle (floating bottom-right) -->
+<audio id="ambient-audio" loop preload="none" data-no-i18n>
+<source src="/audio/ambient.mp3" type="audio/mpeg">
+</audio>
+<button id="music-toggle" type="button" aria-label="Toggle ambient music" data-no-i18n>
+<svg class="ic-off" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V6l10-2v12"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/><line x1="3" y1="3" x2="21" y2="21" stroke-width="2"/></svg>
+<svg class="ic-on" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V6l10-2v12"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg>
+<span class="mt-label">Ambient</span>
+</button>
 
 <!-- 1. HERO -->
 <section class="hero" id="hero">
@@ -943,6 +967,73 @@ window.addEventListener('load', () => {
 });
 </script>
 
+
+<script>
+/* Ambient music toggle — gentle fade in/out, persists state via localStorage.
+   Default: OFF. Click toggle → fades in. Refresh: remembers last state.
+   Auto-attempt play on load only if user previously enabled it. */
+(function(){
+  var audio = document.getElementById('ambient-audio');
+  var btn   = document.getElementById('music-toggle');
+  if (!audio || !btn) return;
+
+  var KEY = 'cnx-ambient-music';
+  var TARGET_VOLUME = 0.28;   // gentle, non-intrusive
+  var FADE_MS = 1400;
+  audio.volume = 0;
+
+  function fadeTo(target, done){
+    var start = audio.volume;
+    var t0 = performance.now();
+    function step(now){
+      var k = Math.min(1, (now - t0) / FADE_MS);
+      audio.volume = start + (target - start) * k;
+      if (k < 1) requestAnimationFrame(step);
+      else if (done) done();
+    }
+    requestAnimationFrame(step);
+  }
+
+  function play(){
+    audio.preload = 'auto';
+    var p = audio.play();
+    if (p && typeof p.catch === 'function'){
+      p.then(function(){
+        btn.classList.add('playing');
+        fadeTo(TARGET_VOLUME);
+        try{ localStorage.setItem(KEY, 'on'); }catch(e){}
+      }).catch(function(){
+        // browser blocked — wait for user interaction
+        btn.classList.remove('playing');
+      });
+    }
+  }
+  function pause(){
+    fadeTo(0, function(){ audio.pause(); });
+    btn.classList.remove('playing');
+    try{ localStorage.setItem(KEY, 'off'); }catch(e){}
+  }
+
+  btn.addEventListener('click', function(){
+    if (audio.paused) play(); else pause();
+  });
+
+  // Restore previous state
+  var prev = null;
+  try{ prev = localStorage.getItem(KEY); }catch(e){}
+  if (prev === 'on'){
+    // Try autoplay; if browser blocks, will play on first user interaction
+    setTimeout(play, 600);
+    var resume = function(){
+      if (audio.paused) play();
+      document.removeEventListener('click', resume);
+      document.removeEventListener('touchstart', resume);
+    };
+    document.addEventListener('click', resume, { once: true });
+    document.addEventListener('touchstart', resume, { once: true, passive: true });
+  }
+})();
+</script>
 
 <script>
 /* Mobile-friendly video playback:

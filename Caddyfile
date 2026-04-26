@@ -21,6 +21,15 @@
 		Accept-Ranges bytes
 	}
 
+	# Audio files: long cache + ensure byte-range (critical for streaming)
+	@audio {
+		path /audio/*
+	}
+	header @audio {
+		Cache-Control "public, max-age=2592000, immutable"
+		Accept-Ranges bytes
+	}
+
 	# Image files: long cache
 	@images {
 		path /images/* *.png *.jpg *.jpeg *.svg *.webp
