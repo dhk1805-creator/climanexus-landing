@@ -61,7 +61,8 @@ nav.scrolled{border-bottom-color:var(--border);box-shadow:0 1px 3px rgba(13,59,1
 .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:100px;background:linear-gradient(to top,#fff,transparent);z-index:1}
 .hero .container{position:relative;z-index:2}
 .hero-inner{max-width:720px;padding:120px 0 80px}
-.hero h1{font-size:3rem;color:#fff;margin-bottom:20px;letter-spacing:-.5px}
+.hero h1{font-size:clamp(1.85rem,4.2vw,3rem);color:#fff;margin-bottom:20px;letter-spacing:-.5px;line-height:1.2}
+.hero h1 br{display:none}
 .hero h1 em{color:var(--accent);font-style:normal}
 .hero-sub{font-size:1.05rem;color:rgba(255,255,255,.75);margin-bottom:28px;max-width:600px;line-height:1.7}
 .hero-points{list-style:none;margin-bottom:36px}
@@ -287,8 +288,7 @@ footer{background:var(--primary);padding:40px 0;color:rgba(255,255,255,.6)}
 html[lang="vi"] body{font-family:'Be Vietnam Pro','Plus Jakarta Sans',-apple-system,sans-serif}
 html[lang="vi"] h1,html[lang="vi"] h2,html[lang="vi"] h3,html[lang="vi"] h4,html[lang="vi"] h5,html[lang="vi"] h6{font-family:'Be Vietnam Pro','Space Grotesk',sans-serif}
 html[lang="vi"] .nav-links a,html[lang="vi"] .btn,html[lang="vi"] .btn-launch{font-family:'Be Vietnam Pro',inherit}
-html[lang="vi"] .hero h1{font-size:2.5rem;line-height:1.25}
-html[lang="vi"] .hero h1 br{display:none}
+
 /* LANG TOGGLE */
 .lang-toggle{display:inline-flex;align-items:center;gap:2px;font-size:.78rem;margin-right:4px}
 .lang-toggle button{background:none;border:none;cursor:pointer;color:var(--text-sec);padding:6px 9px;font-weight:700;font-family:inherit;font-size:.78rem;border-radius:6px;transition:all .2s;letter-spacing:0.5px}
