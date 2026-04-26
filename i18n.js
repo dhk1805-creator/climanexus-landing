@@ -102,7 +102,7 @@ function i18n_apply(lang){
   i18n_walk(n => {
     const orig = i18n_orig.get(n); if (!orig) return;
     if (lang === 'en') { n.textContent = orig; return; }
-    const t = orig.trim(); if (i18n_dict[t]) n.textContent = orig.replace(t, i18n_dict[t]);
+    const t = orig.trim(); if (t in i18n_dict) { const tx = i18n_dict[t]; n.textContent = tx === '' ? orig.replace(t, '').replace(/\s+/g,' ').trim() : orig.replace(t, tx); }
   });
   document.documentElement.lang = lang;
   const tk = "ClimaNexus — Intelligent IAQ & IEQ Control Platform";
