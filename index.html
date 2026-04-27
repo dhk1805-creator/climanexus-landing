@@ -642,6 +642,15 @@ video.sec-video{width:100%;height:100%;object-fit:cover;display:block;border-rad
 </div>
 </nav>
 
+<!-- In-app browser banner (Zalo/Facebook/Instagram/LinkedIn — limited media support) -->
+<div id="inapp-banner" data-no-i18n style="display:none;position:fixed;top:0;left:0;right:0;z-index:10001;background:linear-gradient(180deg,rgba(14,17,23,0.96),rgba(14,17,23,0.92));backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,169,110,0.35);padding:14px 18px;color:#E8E2D5;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.84rem;line-height:1.45;text-align:center;box-shadow:0 4px 24px rgba(0,0,0,0.5)">
+<div style="max-width:680px;margin:0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center">
+<span>For best experience with videos and ambient music, please open this site in your default browser.</span>
+<button id="inapp-open-btn" type="button" style="background:linear-gradient(135deg,#E0C994,#C9A96E);color:#000;border:none;padding:8px 16px;border-radius:999px;font-weight:700;font-size:0.78rem;letter-spacing:0.5px;cursor:pointer;font-family:inherit">OPEN IN BROWSER →</button>
+<button id="inapp-close-btn" type="button" style="background:transparent;color:rgba(232,226,213,0.6);border:1px solid rgba(232,226,213,0.2);padding:7px 14px;border-radius:999px;font-size:0.74rem;cursor:pointer;font-family:inherit">Continue here</button>
+</div>
+</div>
+
 <!-- Ambient music toggle (floating bottom-right) -->
 <audio id="ambient-audio" loop preload="none" data-no-i18n>
 <source src="/audio/ambient.mp3" type="audio/mpeg">
@@ -1062,6 +1071,34 @@ window.addEventListener('load', () => {
 });
 </script>
 
+
+<script>
+/* In-app browser detection (Zalo/Facebook/Instagram/LinkedIn) — offer to open in system browser */
+(function(){
+  var ua = navigator.userAgent || '';
+  var inApp = /Zalo|FBAN|FBAV|Instagram|LinkedIn|Line|MicroMessenger|Twitter|Snapchat|TikTok/i.test(ua);
+  if (!inApp) return;
+  var banner = document.getElementById('inapp-banner');
+  var openBtn = document.getElementById('inapp-open-btn');
+  var closeBtn = document.getElementById('inapp-close-btn');
+  if (!banner) return;
+  banner.style.display = 'block';
+  document.body.style.paddingTop = (banner.offsetHeight) + 'px';
+  openBtn.addEventListener('click', function(){
+    var url = 'https://climanexusvn.com/';
+    if (/Android/i.test(ua)){
+      window.location.href = 'intent://climanexusvn.com/#Intent;scheme=https;package=com.android.chrome;end';
+    } else if (/iPhone|iPad|iPod/i.test(ua)){
+      try{ navigator.clipboard.writeText(url); alert('Link copied. Please paste into Safari/Chrome.'); }
+      catch(e){ prompt('Copy this link to open in browser:', url); }
+    } else { prompt('Copy this link to open in browser:', url); }
+  });
+  closeBtn.addEventListener('click', function(){
+    banner.style.display = 'none';
+    document.body.style.paddingTop = '0';
+  });
+})();
+</script>
 
 <script>
 /* Ambient music — auto-play. Browser blocks autoplay audio? Start on FIRST user interaction
