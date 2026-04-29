@@ -35,3 +35,7 @@ node_modules/
 dist/
 .env
 .env.local
+
+# Video sources (uploaded to Cloudflare Stream)
+*.mp4
+!videos/posters/*.mp4
