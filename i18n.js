@@ -80,7 +80,6 @@ const i18n_dict = {
 "ClimaNexus, Intelligent IAQ/IEQ control platform. AI powered HVAC automation with deterministic safety and 30% energy savings.":"ClimaNexus, Nền tảng điều khiển IAQ/IEQ thông minh. Tự động hóa HVAC với AI, an toàn xác định và tiết kiệm 30% năng lượng.",
 "Market Focus":"Định vị thị trường","Tropical Asia":"Châu Á nhiệt đới",
 "Purpose built for Tropical Asia":"Thiết kế riêng cho khí hậu nhiệt đới châu Á",
-"Tropical climates demand fundamentally different control. Western HVAC AI optimizes for sensible cooling.":"Khí hậu nhiệt đới đòi hỏi cách điều khiển hoàn toàn khác. AI HVAC phương Tây tối ưu cho làm mát sensible.",
 "ClimaNexus is built for the humidity, pollution, and mixed-mode realities of Southeast Asia.":"ClimaNexus được xây dựng cho thực tế độ ẩm, ô nhiễm và mixed-mode của Đông Nam Á.",
 "Humidity-First Logic":"Logic ưu tiên độ ẩm",
 "Latent load dominates in the tropics. Dehumidification is a first class state in our control machine, not an afterthought bolted onto cooling.":"Tải ẩn chiếm ưu thế ở vùng nhiệt đới. Hút ẩm là trạng thái hạng nhất trong máy điều khiển của chúng tôi, không phải thêm thắt bên cạnh làm mát.",
@@ -98,8 +97,6 @@ const i18n_dict = {
 "Defensibility built into the foundation.":"Khả năng phòng vệ được xây dựng từ nền móng."
 ,
 "Built for hot humid climates":"Thiết kế cho khí hậu nóng ẩm",
-"Tropical climates differ fundamentally from temperate or cold zones. Hot humid air carries latent heat (water vapor) that often exceeds the sensible heat (dry bulb temperature) load.":"Khí hậu nhiệt đới khác cơ bản so với ôn đới hay hàn đới. Không khí nóng ẩm mang nhiệt ẩn (hơi nước) thường lớn hơn cả tải nhiệt hiện (nhiệt độ khô).",
-"ClimaNexus runs separate algorithms for sensible and latent control, then coordinates them in real time.":"ClimaNexus chạy các thuật toán riêng cho điều khiển nhiệt hiện và nhiệt ẩn, rồi phối hợp chúng theo thời gian thực.",
 "Sensible–Latent Decoupling":"Tách điều khiển nhiệt hiện và nhiệt ẩn",
 "Sensible heat (temperature) and latent heat (moisture) load the system through different physical paths. ClimaNexus operates two coupled state machines so cooling capacity is never spent solving a humidity problem.":"Nhiệt hiện (nhiệt độ) và nhiệt ẩn (độ ẩm) tác động lên hệ thống qua hai cơ chế vật lý khác nhau. ClimaNexus vận hành hai máy trạng thái liên kết để công suất lạnh không bị tiêu hao cho bài toán độ ẩm.",
 "Humidity Control as a First Class State":"Kiểm soát ẩm, trạng thái hạng nhất",
@@ -193,6 +190,9 @@ const i18n_dict = {
 ,
 "a smart control layer for":"một lớp điều khiển thông minh vì",
 "health, safety, and efficiency":"sức khỏe, an toàn, và hiệu quả"
+,
+"Tropical climates present unique challenges compared to temperate zones. High humidity levels mean that the latent heat load (moisture) often surpasses the sensible heat load (temperature).":"Khí hậu nhiệt đới đặt ra thách thức đặc thù so với vùng ôn đới. Độ ẩm cao khiến tải nhiệt ẩn (độ ẩm) thường lớn hơn cả tải nhiệt hiện (đặc trưng bởi nhiệt độ bầu khô).",
+"ClimaNexus employs decoupled algorithms to manage sensible and latent loads independently, orchestrating them in real-time for optimal comfort.":"ClimaNexus áp dụng các thuật toán tách rời để điều khiển độc lập nhiệt hiện và nhiệt ẩn, phối hợp chúng theo thời gian thực để đạt sự tiện nghi tối ưu."
 
 };
 
