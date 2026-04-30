@@ -193,6 +193,22 @@ const i18n_dict = {
 ,
 "Tropical climates present unique challenges compared to temperate zones. High humidity levels mean that the latent heat load (moisture) often surpasses the sensible heat load (temperature).":"Khí hậu nhiệt đới đặt ra thách thức đặc thù so với vùng ôn đới. Độ ẩm cao khiến tải nhiệt ẩn (độ ẩm) thường lớn hơn cả tải nhiệt hiện (đặc trưng bởi nhiệt độ bầu khô).",
 "ClimaNexus employs decoupled algorithms to manage sensible and latent loads independently, orchestrating them in real-time for optimal comfort.":"ClimaNexus áp dụng các thuật toán tách rời để điều khiển độc lập nhiệt hiện và nhiệt ẩn, phối hợp chúng theo thời gian thực để đạt sự tiện nghi tối ưu."
+,
+"How the algorithm works":"Cách thuật toán vận hành",
+"Four core steps, from independent loads to bounded AI":"Bốn bước cốt lõi, từ tách tải độc lập đến AI có giới hạn",
+"Decoupling":"Tách tải độc lập",
+"Independent load separation":"Tách tải độc lập",
+"Edge Hub splits demand into three distinct paths, no longer relying on a single thermostat.":"Edge Hub phân tách nhu cầu thành ba luồng riêng biệt, không còn dựa vào một thông số nhiệt độ duy nhất.",
+"Deterministic logic":"Logic xác định",
+"Parallel state-based execution":"Thực thi song song theo trạng thái",
+"States run in parallel, never as overlapping commands, with explicit priority and timers.":"Các trạng thái chạy song song, không chồng chéo lệnh, có thứ tự ưu tiên rõ ràng và bộ định thời.",
+"Real-time coordination":"Phối hợp thời gian thực",
+"500ms loop · Permission Gate":"Vòng 500ms · Permission Gate",
+"A 500ms feedback loop resolves conflicts and verifies safety on every cycle.":"Vòng phản hồi 500ms giải quyết xung đột và xác minh an toàn ở mỗi chu kỳ.",
+"AI optimization":"Tối ưu AI",
+"Cloud advisor, edge decides":"Cloud cố vấn, edge quyết định",
+"Cloud AI tunes thresholds and forecasts loads, but never overrides the on-edge state machine.":"Cloud AI tinh chỉnh ngưỡng và dự báo tải, nhưng không bao giờ vượt qua máy trạng thái tại biên.",
+"Result: the conventional cold-but-damp sensation of standard AC is eliminated. What replaces it is a dry, clean, optimal-temperature living space, sustained automatically.":"Kết quả: cảm giác lạnh-mà-vẫn-ẩm của máy lạnh truyền thống được loại bỏ. Thay vào đó là không gian sống khô ráo, sạch khuẩn, nhiệt độ tối ưu, được duy trì tự động."
 
 };
 
