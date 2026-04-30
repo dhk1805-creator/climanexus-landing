@@ -157,8 +157,6 @@ const i18n_dict = {
 "Architecture &amp; Action":"Kiến trúc & Hành động",
 "Logic & Optimization":"Logic & Tối ưu hóa",
 "Logic &amp; Optimization":"Logic & Tối ưu hóa",
-"How the system is built":"Hệ thống được xây như thế nào",
-"How the system reasons":"Hệ thống suy luận như thế nào",
 "The physical foundation for the living space, sensors, edge hub, ventilation, heating, dehumidification, and a cloud AI assistant.":"Nền tảng vật lý cho không gian sống: cảm biến, hub tại biên, thông gió, sưởi, tách ẩm, và trợ lý AI đám mây.",
 "The reasoning layer, delivering measurable comfort and refinement through real-time loops, AI tuning, and predictive forecasting.":"Tầng suy luận, mang lại sự tinh tế và tiện nghi đo lường được qua chu kỳ điều khiển real-time, tối ưu AI và dự báo.",
 "Unified collection":"Hợp nhất thu thập",
@@ -188,6 +186,9 @@ const i18n_dict = {
 ,
 "ClimaNexus: Where Technology Meets Trust":"ClimaNexus: Sự hợp nhất giữa công nghệ và lòng tin",
 "The integration of system architecture and control method forms a unified ClimaNexus ecosystem, a closed operational loop from Collection → Analysis → Reasoning → Action → Reporting. The solution goes beyond technical parameters, transforming them into a perfect living space where comfort and health are constantly present, measurable with clearly defined criteria.":"Sự kết hợp giữa hệ thống hạ tầng và phương pháp điều khiển tạo nên một hệ sinh thái ClimaNexus thống nhất, vận hành khép kín từ khâu Thu thập → Phân tích → Tư duy → Hành động đến Báo cáo. Giải pháp không chỉ dừng lại ở những thông số kỹ thuật mà chuyển hóa chúng thành một không gian sống hoàn hảo, nơi sự tiện nghi và an toàn cho sức khỏe luôn hiện hữu với các tiêu chí có thể định lượng rõ ràng."
+,
+"HVAC and Ventilation System":"Hệ thống điều hòa không khí và thông gió",
+"Control Method and Controller for HVAC and Ventilation Systems":"Phương pháp điều khiển và bộ điều khiển hệ thống điều hòa không khí và thông gió"
 
 };
 
