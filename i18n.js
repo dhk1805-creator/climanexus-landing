@@ -23,8 +23,6 @@ const i18n_dict = {
 "Poor IAQ despite high investment":"IAQ kém dù đầu tư cao","Energy waste":"Lãng phí năng lượng","Unpredictable comfort":"Tiện nghi không dự đoán được","No measurable performance":"Không có hiệu suất đo lường được",
 "The problem is not hardware.":"Vấn đề không nằm ở phần cứng.","The problem is the absence of a coordinated control system.":"Vấn đề là sự thiếu vắng hệ thống điều khiển có phối hợp.",
 "Our Solution":"Giải pháp của chúng tôi","Standards compliant (WHO/WELL/LEED), deterministic, AI assisted environmental control platform":"Nền tảng điều khiển môi trường theo WHO, WELL, LEED, hỗ trợ bởi AI",
-"ClimaNexus introduces a new layer:":"ClimaNexus giới thiệu một lớp mới:",
-"A control intelligence that sits above HVAC devices and orchestrates the environment.":"Trí tuệ điều khiển nằm trên các thiết bị HVAC và điều phối toàn bộ môi trường.",
 "IAQ Driven Operation":"Vận hành hướng IAQ","Ventilation and system behavior respond directly to CO₂, PM2.5, Temperature, and Humidity.":"Thông gió và hành vi hệ thống phản ứng trực tiếp với CO₂, PM2.5, nhiệt độ và độ ẩm.",
 "Deterministic Control Logic":"Logic điều khiển xác định",
 "Clearly defined states: NORMAL / IAQ_BOOST / HEAT_ASSIST / DEHUM / ALARM. Priority based execution ensures stable operation.":"Các trạng thái xác định rõ: NORMAL / IAQ_BOOST / HEAT_ASSIST / DEHUM / ALARM. Thực thi theo ưu tiên đảm bảo vận hành ổn định.",
@@ -189,6 +187,12 @@ const i18n_dict = {
 ,
 "HVAC and Ventilation System":"Hệ thống điều hòa không khí và thông gió",
 "Control Method and Controller for HVAC and Ventilation Systems":"Phương pháp điều khiển và bộ điều khiển hệ thống điều hòa không khí và thông gió"
+,
+"ClimaNexus adds a brain to your HVAC system:":"ClimaNexus thêm một bộ não cho hệ thống HVAC của bạn:",
+"Beyond standard control.":"Vượt khỏi điều khiển thông thường."
+,
+"a smart control layer for":"một lớp điều khiển thông minh vì",
+"health, safety, and efficiency":"sức khỏe, an toàn, và hiệu quả"
 
 };
 
