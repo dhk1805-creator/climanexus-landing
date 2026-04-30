@@ -204,28 +204,45 @@ const i18n_dict = {
 "Decoupling":"Phân tách tải độc lập",
 "Independent load separation":"Tách tải độc lập",
 "Instead of using a single temperature reading to drive the air conditioner, the Edge Hub splits the room's demand into three independent processing channels.":"Thay vì chỉ dùng một thông số nhiệt độ để điều khiển máy lạnh, bộ điều khiển biên (Edge Hub) phân tách nhu cầu của không gian thành ba nhánh xử lý riêng biệt.",
-"<strong>Sensible load</strong>: drives the cooling coil or auxiliary heater based on the deviation between room temperature and setpoint.":"<strong>Nhánh nhiệt hiện (Sensible Load)</strong>: căn cứ vào sai lệch giữa nhiệt độ phòng và nhiệt độ đặt để điều khiển dàn lạnh hoặc bộ gia nhiệt phụ trợ.",
-"<strong>Latent load</strong>: drives a dedicated dehumidifier from actual humidity and dewpoint, independent of how deep the air conditioner is running.":"<strong>Nhánh nhiệt ẩn (Latent Load)</strong>: căn cứ vào độ ẩm thực tế và điểm sương để điều khiển thiết bị tách ẩm chuyên dụng, không phụ thuộc vào việc máy lạnh có đang chạy sâu hay không.",
-"<strong>Ventilation (IAQ)</strong>: prioritizes control of CO₂ and PM2.5 to deliver fresh air without unnecessarily disturbing the thermal balance.":"<strong>Nhánh thông gió (IAQ)</strong>: ưu tiên kiểm soát nồng độ CO₂ và bụi mịn PM2.5 để cấp gió tươi mà không làm xáo trộn quá mức hệ thống nhiệt.",
+
 "Deterministic Logic":"Thuật toán xử lý song song và xác định",
 "Parallel state-based execution":"Thực thi song song theo trạng thái",
 "The system never runs overlapping commands. It classifies the environment into explicit Operating States with clear priority and timing rules.":"Hệ thống không chạy các dòng lệnh chồng chéo mà phân loại môi trường vào các Trạng thái hoạt động (States) cụ thể với thứ tự ưu tiên và quy tắc thời gian rõ ràng.",
-"<strong>IAQ_BOOST</strong>: activates when the air feels stuffy, prioritizing ventilation fans and VAV dampers.":"<strong>IAQ_BOOST</strong>: kích hoạt khi không khí ngột ngạt, ưu tiên mở quạt thông gió và van gió (VAV).",
-"<strong>DEHUM</strong>: activates when humidity exceeds the activation threshold, running the dehumidifier with timers that prevent the compressor from cycling on and off continuously.":"<strong>DEHUM</strong>: kích hoạt khi độ ẩm vượt ngưỡng, vận hành máy tách ẩm với bộ định thời (timer) để tránh máy nén bật/tắt liên tục.",
-"<strong>HEAT_ASSIST</strong>: the most 'expensive' state, auto-engages auxiliary heating when extended drying leaves the room too cool, keeping it comfortable yet dry.":"<strong>HEAT_ASSIST</strong>: trạng thái 'đắt giá' nhất, tự động kích hoạt gia nhiệt phụ trợ khi phòng bị quá lạnh do quá trình tách ẩm kéo dài, giúp duy trì nhiệt độ dễ chịu mà vẫn khô ráo.",
+
 "Real-time Coordination":"Phối hợp theo thời gian thực",
 "500ms feedback loop":"Vòng phản hồi 500ms",
 "The ClimaNexus brain executes an ultra-fast feedback loop every 500ms (half a second), continuously re-reading the room and updating every device.":"Bộ não ClimaNexus thực hiện một vòng lặp phản hồi cực nhanh với chu kỳ 500ms (0,5 giây), liên tục đọc lại không khí phòng và cập nhật từng thiết bị.",
-"<strong>Conflict resolution</strong>: when two demands arise simultaneously (for example, fresh air and dehumidification), the orchestration algorithm prioritizes health (IAQ) first and humidity second, so devices play together like a coordinated orchestra.":"<strong>Kiểm soát xung đột</strong>: khi hai yêu cầu xảy ra cùng lúc (ví dụ: cần gió tươi và cần tách ẩm), thuật toán điều phối ưu tiên sức khỏe (IAQ) trước, sau đó mới đến độ ẩm, đảm bảo các thiết bị phối hợp nhịp nhàng như một dàn nhạc.",
-"<strong>Permission Gate</strong>: this is the final safety layer. Before any command reaches the auxiliary heater or dehumidifier, the system must verify Airflow proof, ensuring absolute safety and efficient heat exchange.":"<strong>Cổng cho phép (Permission Gate)</strong>: đây là lớp bảo vệ cuối cùng. Trước khi ra lệnh cho bộ gia nhiệt hay máy tách ẩm, hệ thống phải xác nhận có lưu lượng gió lưu thông (Airflow proof) để đảm bảo an toàn tuyệt đối và hiệu quả trao đổi nhiệt.",
+
 "AI Optimization":"Tối ưu hóa bằng AI",
 "Cloud advisor, never commands":"Cố vấn cloud, không ra lệnh trực tiếp",
 "The cloud AI layer never intervenes directly in machine commands. It acts as a quiet advisor that refines control parameters, learning each room's individual behavior.":"Lớp AI trên đám mây không can thiệp trực tiếp vào lệnh chạy máy. Nó đóng vai trò một cố vấn thầm lặng tinh chỉnh các tham số điều khiển, học hành vi riêng của từng phòng.",
-"<strong>Thermal and humidity inertia learning</strong>: the AI analyzes how quickly humidity and temperature change in each room, then adjusts activation thresholds to match each space's specific characteristics.":"<strong>Học quán tính nhiệt và ẩm</strong>: AI phân tích tốc độ thay đổi của độ ẩm và nhiệt độ trong từng phòng, rồi điều chỉnh các ngưỡng kích hoạt sao cho phù hợp với đặc tính riêng của không gian.",
-"<strong>Anticipating demand</strong>: rather than waiting for the environment to deteriorate, a short-term load forecasting algorithm fires up devices early when more occupants are arriving or outdoor humidity is rising, sustaining comfort without any gaps.":"<strong>Đón đầu nhu cầu</strong>: thay vì đợi môi trường xấu đi mới phản ứng, thuật toán dự báo tải ngắn hạn sẽ kích hoạt sớm các thiết bị khi thấy xu hướng người vào phòng đông hoặc độ ẩm bên ngoài tăng cao, giúp duy trì sự tiện nghi không kẽ hở.",
+
 "The result:":"Kết quả:",
 "this orchestration completely removes the “cold but still damp” sensation typical of conventional AC, replacing it with a dry, clean living space sustained at the ideal temperature, automatically and reliably.":"sự phối hợp này loại bỏ hoàn toàn cảm giác “lạnh buốt nhưng vẫn ẩm” thường thấy ở máy lạnh truyền thống, thay thế bằng một không gian sống khô ráo, sạch khuẩn và luôn duy trì ở mức nhiệt độ lý tưởng một cách tự động và bền vững."
 
+,
+/* Tech 4-step split keys (fix: <strong> splits text nodes) + Step subtitles */
+"Sensible load":"Nhánh nhiệt hiện (Sensible Load)",
+": drives the cooling coil or auxiliary heater based on the deviation between room temperature and setpoint.":": căn cứ vào sai lệch giữa nhiệt độ phòng và nhiệt độ đặt để điều khiển dàn lạnh hoặc bộ gia nhiệt phụ trợ.",
+"Latent load":"Nhánh nhiệt ẩn (Latent Load)",
+": drives a dedicated dehumidifier from actual humidity and dewpoint, independent of how deep the air conditioner is running.":": căn cứ vào độ ẩm thực tế và điểm sương để điều khiển thiết bị tách ẩm chuyên dụng, không phụ thuộc vào việc máy lạnh có đang chạy sâu hay không.",
+"Ventilation (IAQ)":"Nhánh thông gió (IAQ)",
+": prioritizes control of CO₂ and PM2.5 to deliver fresh air without unnecessarily disturbing the thermal balance.":": ưu tiên kiểm soát nồng độ CO₂ và bụi mịn PM2.5 để cấp gió tươi mà không làm xáo trộn quá mức hệ thống nhiệt.",
+": activates when the air feels stuffy, prioritizing ventilation fans and VAV dampers.":": kích hoạt khi không khí ngột ngạt, ưu tiên mở quạt thông gió và van gió (VAV).",
+": activates when humidity exceeds the activation threshold, running the dehumidifier with timers that prevent the compressor from cycling on and off continuously.":": kích hoạt khi độ ẩm vượt ngưỡng, vận hành máy tách ẩm với bộ định thời (timer) để tránh máy nén bật/tắt liên tục.",
+": the most expensive state, auto-engages auxiliary heating when extended drying leaves the room too cool, keeping it comfortable yet dry.":": trạng thái 'đắt giá' nhất, tự động kích hoạt gia nhiệt phụ trợ khi phòng bị quá lạnh do quá trình tách ẩm kéo dài, giúp duy trì nhiệt độ dễ chịu mà vẫn khô ráo.",
+"Conflict resolution":"Kiểm soát xung đột",
+": when two demands arise simultaneously (for example, fresh air and dehumidification), the orchestration algorithm prioritizes health (IAQ) first and humidity second, so devices play together like a coordinated orchestra.":": khi hai yêu cầu xảy ra cùng lúc (ví dụ: cần gió tươi và cần tách ẩm), thuật toán điều phối ưu tiên sức khỏe (IAQ) trước, sau đó mới đến độ ẩm, đảm bảo các thiết bị phối hợp nhịp nhàng như một dàn nhạc.",
+"Permission Gate":"Cổng cho phép (Permission Gate)",
+": this is the final safety layer. Before any command reaches the auxiliary heater or dehumidifier, the system must verify Airflow proof, ensuring absolute safety and efficient heat exchange.":": đây là lớp bảo vệ cuối cùng. Trước khi ra lệnh cho bộ gia nhiệt hay máy tách ẩm, hệ thống phải xác nhận có lưu lượng gió lưu thông (Airflow proof) để đảm bảo an toàn tuyệt đối và hiệu quả trao đổi nhiệt.",
+"Thermal and humidity inertia learning":"Học quán tính nhiệt và ẩm",
+": the AI analyzes how quickly humidity and temperature change in each room, then adjusts activation thresholds to match each space's specific characteristics.":": AI phân tích tốc độ thay đổi của độ ẩm và nhiệt độ trong từng phòng, rồi điều chỉnh các ngưỡng kích hoạt sao cho phù hợp với đặc tính riêng của không gian.",
+"Anticipating demand":"Đón đầu nhu cầu",
+": rather than waiting for the environment to deteriorate, a short-term load forecasting algorithm fires up devices early when more occupants are arriving or outdoor humidity is rising, sustaining comfort without any gaps.":": thay vì đợi môi trường xấu đi mới phản ứng, thuật toán dự báo tải ngắn hạn sẽ kích hoạt sớm các thiết bị khi thấy xu hướng người vào phòng đông hoặc độ ẩm bên ngoài tăng cao, giúp duy trì sự tiện nghi không kẽ hở.",
+"Step 01 · Independent load separation":"Bước 01 · Phân tách tải độc lập",
+"Step 02 · Parallel state-based execution":"Bước 02 · Xử lý song song theo trạng thái",
+"Step 03 · 500ms feedback loop":"Bước 03 · Vòng lặp phản hồi 500ms",
+"Step 04 · Cloud advisor, never commands":"Bước 04 · Cố vấn từ đám mây, không ra lệnh",
 };
 
 const i18n_orig = new WeakMap();
