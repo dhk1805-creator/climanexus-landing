@@ -191,8 +191,8 @@ const i18n_dict = {
 "a smart control layer for":"một lớp điều khiển thông minh vì",
 "health, safety, and efficiency":"sức khỏe, an toàn, và hiệu quả"
 ,
-"Unlike temperate environments, tropical climates are dominated by latent heat. Since moisture often contributes more to the cooling load than dry-bulb temperature,":"Khác với vùng ôn đới, khí hậu nhiệt đới bị chi phối bởi tải nhiệt ẩn. Vì độ ẩm thường đóng góp vào tải làm mát nhiều hơn nhiệt độ bầu khô,",
-"ClimaNexus uses specialized, decoupled algorithms to process each load, ensuring precision control beyond standard systems.":"ClimaNexus sử dụng các thuật toán chuyên biệt và tách rời để xử lý từng loại tải, đảm bảo điều khiển chính xác vượt khỏi các hệ thống thông thường."
+"Tropical climates present unique challenges compared to temperate zones. High humidity levels mean that the latent heat load (moisture) often surpasses the sensible heat load (temperature).":"Khí hậu nhiệt đới đặt ra thách thức đặc thù so với vùng ôn đới. Độ ẩm cao khiến tải nhiệt ẩn (độ ẩm) thường lớn hơn cả tải nhiệt hiện (đặc trưng bởi nhiệt độ bầu khô).",
+"ClimaNexus employs decoupled algorithms to manage sensible and latent loads independently, orchestrating them in real-time for optimal comfort.":"ClimaNexus áp dụng các thuật toán tách rời để điều khiển độc lập nhiệt hiện và nhiệt ẩn, phối hợp chúng theo thời gian thực để đạt sự tiện nghi tối ưu."
 
 };
 
