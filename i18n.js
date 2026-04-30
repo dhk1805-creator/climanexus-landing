@@ -143,12 +143,6 @@ const i18n_dict = {
 ,
 "Behind your comfort is a deeply orchestrated, scientifically grounded control system. ClimaNexus is not just a connected device, it is the distillation of decades of HVAC engineering combined with artificial intelligence and big data, giving your home the ability to breathe, protect, and optimize energy on its own, sustainably.":"Đằng sau sự thoải mái của bạn là một hệ thống logic vận hành cực kỳ phức tạp nhưng đầy khoa học. ClimaNexus không chỉ là một thiết bị kết nối; đó là sự kết tinh của hàng chục năm kinh nghiệm kỹ thuật nhiệt lạnh, kết hợp với trí tuệ nhân tạo và big data, giúp ngôi nhà của bạn biết tự 'thở', tự bảo vệ và tự tối ưu năng lượng một cách bền vững."
 ,
-"Intellectual Property & Components":"Sở hữu trí tuệ & Thành phần",
-"Intellectual Property &amp; Components":"Sở hữu trí tuệ & Thành phần",
-"Patented method, six core components":"Phương pháp được sáng chế, sáu thành phần cốt lõi",
-"Two Vietnam patent applications, ":"Hai đơn sáng chế Việt Nam, ",
-" for the control method and ":" cho phương pháp điều khiển và ",
-" for the integrated system, filed 05 February 2026. The system orchestrates six core components below.":" cho hệ thống tích hợp, nộp ngày 05/02/2026. Hệ thống điều phối sáu thành phần cốt lõi dưới đây.",
 "Sensors":"Cảm biến",
 "Giác quan · CO₂ · PM2.5 · RH · T":"Giác quan · CO₂ · PM2.5 · RH · T",
 "Distributed, attentive readings of PM2.5, CO₂, humidity, and temperature across every zone, sub-minute sampling.":"Cảm biến phân tán đo PM2.5, CO₂, độ ẩm và nhiệt độ ở từng khu vực, lấy mẫu dưới một phút.",
@@ -167,6 +161,26 @@ const i18n_dict = {
 "Dehumidifier":"Dehumidifier",
 "Kiểm soát ẩm · Active drying":"Kiểm soát ẩm · Hút ẩm chủ động",
 "Active humidity control beyond what cooling alone can deliver, critical for tropical comfort in hot-humid climate.":"Kiểm soát ẩm chủ động vượt khỏi khả năng làm mát thông thường, yếu tố sống còn cho tiện nghi vùng nóng ẩm."
+,
+"Two patents, one orchestrated home":"Hai sáng chế, một ngôi nhà điều phối nhịp nhàng",
+"Filed 05 February 2026 with the Vietnam Intellectual Property Office. Together they cover the control method and the integrated system.":"Nộp ngày 05/02/2026 tại Cục Sở hữu Trí tuệ Việt Nam. Cùng nhau bao phủ cả phương pháp điều khiển và hệ thống tích hợp.",
+"Patent 1, the Method":"Sáng chế 1, Phương pháp",
+"The diligent caretaker, deciding every half second":"Quản gia tận tụy, ra quyết định mỗi nửa giây",
+"Patent 2, the System":"Sáng chế 2, Hệ thống",
+"The central brain orchestrating senses and muscles":"Bộ não trung tâm điều phối giác quan và cơ bắp",
+"Application No. 1-2026-00972 · Filed 05 Feb 2026 · Vietnam":"Số đơn 1-2026-00972 · Nộp 05/02/2026 · Việt Nam",
+"Application No. 1-2026-00971 · Filed 05 Feb 2026 · Vietnam":"Số đơn 1-2026-00971 · Nộp 05/02/2026 · Việt Nam",
+"Always listening":"Lắng nghe liên tục",
+"500ms control loop · Lắng nghe liên tục":"Vòng lặp điều khiển 500ms · Lắng nghe liên tục",
+"The system asks every half second: is the air clean, is the temperature comfortable? Decisions in milliseconds.":"Hệ thống hỏi mỗi nửa giây: không khí có sạch, nhiệt độ có dễ chịu? Quyết định trong tích tắc.",
+"Health first · Ưu tiên sức khỏe":"Ưu tiên sức khỏe · IAQ Boost",
+"When CO₂ rises with more occupants, fresh air flows in before stuffiness sets in. Scene-aware: sleep, host, away, cook.":"Khi CO₂ tăng do đông người, gió tươi được cấp vào trước khi cảm thấy ngột ngạt. Nhận biết hoạt cảnh: ngủ, tiếp khách, vắng nhà, nấu ăn.",
+"Smart efficiency":"Tiết kiệm thông minh",
+"No wasted runtime · Tiết kiệm thông minh":"Không lãng phí · Tiết kiệm thông minh",
+"Operates exactly enough to maintain perfect indoor air. Stops on cue, no idle compressor cycles, no over-ventilation.":"Hoạt động đúng và đủ để duy trì không khí hoàn hảo. Dừng đúng lúc, không có chu kỳ máy nén rỗi, không thông gió thừa.",
+"Safety first":"An toàn là trên hết",
+"Permission Gate · An toàn là trên hết":"Permission Gate Safety · An toàn là trên hết",
+"Heating cannot run without verified airflow. Dehumidification only when needed. Every actuator command is gated.":"Sưởi không chạy nếu chưa xác minh có gió. Hút ẩm chỉ khi cần thiết. Mọi lệnh điều khiển đều được kiểm soát."
 
 };
 
