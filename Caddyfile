@@ -27,6 +27,13 @@
 	}
 	header @images Cache-Control "public, max-age=2592000, immutable"
 
+	# HTML pages: short cache so deployments propagate within ~5min
+	# Override CF default 'max-age=0, must-revalidate' which still HIT-cached at edge
+	@html {
+		path / *.html
+	}
+	header @html Cache-Control "public, max-age=300, must-revalidate"
+
 	# Demo route → demo.html
 	@demoExact path /demo
 	rewrite @demoExact /demo.html
