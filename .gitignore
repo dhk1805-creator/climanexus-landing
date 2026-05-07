@@ -39,3 +39,9 @@ dist/
 # Video sources (uploaded to Cloudflare Stream)
 *.mp4
 !videos/posters/*.mp4
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
